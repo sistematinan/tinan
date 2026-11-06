@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head><script>if(location.pathname==="/ha56t6p4blitm3c6tt2sa6fsby")location.replace("/ha56t6p4blitm3c6tt2sa6fsby/"+location.search+location.hash)</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Perfil — Derislainy Tinan | TINAN</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="shell.css">
+<script src="shell.js"></script>
+<style>
+:root {
+--accent: #D51C24;
+--accent-text: #B5161D;
+--accent-contrast: #FFFFFF;
+--navy: #1A3B5C;
+--deep: #0F2438;
+--gray-light: #F4F6F8;
+--gray-graphite: #5A6B7B;
+--line: #E8ECEF;
+--font-main: "Montserrat", "Poppins", "Inter", system-ui, sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+margin: 0;
+font-family: var(--font-main);
+color: var(--navy);
+background: #FFFFFF;
+line-height: 1.6;
+-webkit-font-smoothing: antialiased;
+}
+a { color: inherit; }
+img { display: block; max-width: 100%; }
+:focus-visible {
+outline: 3px solid #FFFFFF;
+outline-offset: 3px;
+box-shadow: 0 0 0 6px var(--deep);
+border-radius: 4px;
+}
+.sec-pad { padding: 96px 24px; }
+.wrap { max-width: 1200px; margin: 0 auto; }
+.eyebrow-tina {
+color: var(--accent-text);
+text-transform: uppercase;
+letter-spacing: 0.2em;
+font-weight: 600;
+font-size: 12px;
+margin: 0;
+}
+.btn-tinan {
+display: inline-block;
+background: var(--accent);
+color: #FFFFFF;
+padding: 16px 40px;
+border-radius: 4px;
+text-decoration: none;
+font-weight: 600;
+font-size: 15px;
+letter-spacing: 0.02em;
+transition: background 0.2s ease, transform 0.2s ease;
+}
+.btn-tinan:hover { background: #B5161D; transform: translateY(-1px); }
+.btn-tinan:active { transform: translateY(0); }
+.fade-in {
+opacity: 0;
+transform: translateY(24px);
+transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.fade-in.is-visible { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+.fade-in { opacity: 1; transform: none; transition: none; }
+html { scroll-behavior: auto; }
+}
+
+/* 1 HEADER */
+.site-header {
+position: sticky;
+top: 0;
+z-index: 100;
+background: rgba(15,36,56,0.95);
+backdrop-filter: blur(8px);
+-webkit-backdrop-filter: blur(8px);
+padding: 20px 24px;
+}
+.site-header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.site-header img { height: 36px; width: auto; object-fit: contain; }
+.back-link {
+color: #FFFFFF;
+opacity: 0.7;
+text-decoration: none;
+font-size: 14px;
+font-weight: 500;
+transition: opacity 0.2s ease;
+}
+.back-link:hover { opacity: 1; }
+
+/* 2 ABERTURA */
+.opening { display: grid; grid-template-columns: 1fr; }
+.opening-text {
+position: relative;
+overflow: hidden;
+background: linear-gradient(135deg, #FFFFFF 0%, #FAFBFC 55%, #F4F6F8 100%);
+padding: 80px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+}
+.opening-text .deco-circle {
+position: absolute;
+left: -120px;
+bottom: -120px;
+width: 360px;
+height: 360px;
+border-radius: 50%;
+background: var(--accent);
+opacity: 0.03;
+pointer-events: none;
+}
+.opening-text .deco-line {
+position: absolute;
+left: 40px;
+top: 0;
+width: 1px;
+height: 60%;
+background: var(--accent);
+opacity: 0.08;
+pointer-events: none;
+}
+.opening-text .label { color: var(--accent-text); text-transform: uppercase; letter-spacing: 0.2em; font-weight: 600; font-size: 12px; margin: 0; position: relative; }
+.opening-text h1 {
+font-size: clamp(2rem, 3.2vw, 3.2rem);
+line-height: 1.15;
+letter-spacing: -0.03em;
+font-weight: 700;
+color: var(--deep);
+margin: 20px 0 0;
+position: relative;
+}
+.opening-text h1 em { font-style: normal; color: var(--accent); }
+.opening-text .name { color: var(--navy); font-weight: 600; font-size: 20px; margin: 40px 0 0; position: relative; }
+.opening-text .role { color: var(--gray-graphite); font-size: 14px; margin: 4px 0 0; position: relative; }
+.opening-text .btn-tinan { margin-top: 48px; align-self: flex-start; position: relative; }
+.opening-photo {
+position: relative;
+aspect-ratio: 4 / 5;
+background-image: url('https://i.imgur.com/8s8oD8M.png');
+background-size: cover;
+background-position: center top;
+background-repeat: no-repeat;
+}
+.opening-photo .blur-edge {
+position: absolute;
+inset: 0;
+background: linear-gradient(to right, #FFFFFF 0%, rgba(255,255,255,0.85) 25%, rgba(255,255,255,0) 100%);
+backdrop-filter: blur(12px);
+-webkit-backdrop-filter: blur(12px);
+-webkit-mask-image: linear-gradient(to right, #000 0%, rgba(0,0,0,0) 40%);
+mask-image: linear-gradient(to right, #000 0%, rgba(0,0,0,0) 40%);
+pointer-events: none;
+}
+@media (min-width: 900px) {
+.opening { grid-template-columns: 55fr 45fr; min-height: 100vh; }
+.opening-photo { aspect-ratio: auto; }
+}
+@media (max-width: 899px) {
+.opening-photo { order: -1; }
+.opening-photo .blur-edge {
+background: linear-gradient(to bottom, rgba(255,255,255,0) 60%, #FFFFFF 100%);
+-webkit-mask-image: none;
+mask-image: none;
+}
+.opening-text { padding: 56px 24px; }
+}
+
+/* 3 CITAÇÃO */
+.quote-sec { background: var(--deep); padding: 140px 24px; }
+.quote-sec .inner { max-width: 900px; margin: 0 auto; text-align: center; }
+.quote-sec .label { color: var(--accent); text-transform: uppercase; letter-spacing: 0.2em; font-weight: 600; font-size: 12px; margin: 0; }
+.quote-mark { font-size: 6rem; line-height: 1; color: var(--accent); opacity: 0.3; margin: 16px 0 0; font-family: Georgia, serif; }
+.quote-sec blockquote {
+margin: 0;
+color: #FFFFFF;
+font-weight: 600;
+font-size: clamp(1.5rem, 2.2vw, 2.2rem);
+line-height: 1.5;
+}
+.quote-sec blockquote strong { color: var(--accent); font-weight: 800; }
+.quote-sec .sign { color: #FFFFFF; opacity: 0.55; font-style: italic; margin: 32px 0 0; }
+
+/* 4 TRATO */
+.treat { background: #FFFFFF; padding: 120px 24px; }
+.treat .wrap { display: grid; grid-template-columns: 1fr; gap: 56px; }
+.treat-left h2 { color: var(--navy); font-weight: 700; font-size: clamp(1.7rem, 2.4vw, 2.3rem); line-height: 1.2; margin: 16px 0 0; }
+.treat-left p { color: var(--gray-graphite); line-height: 1.7; margin: 24px 0 0; }
+.treat-list { border-top: 1px solid var(--line); }
+.treat-item { border-bottom: 1px solid var(--line); padding: 32px 0; }
+.treat-item .num { color: var(--accent-text); font-weight: 700; text-transform: uppercase; letter-spacing: 0.15em; font-size: 13px; margin: 0; }
+.treat-item h3 { color: var(--navy); font-weight: 700; font-size: 1.2rem; margin: 8px 0 0; }
+.treat-item p { color: var(--gray-graphite); line-height: 1.7; margin: 8px 0 0; }
+@media (min-width: 900px) {
+.treat .wrap { grid-template-columns: 35fr 65fr; }
+.treat-left { position: sticky; top: 100px; align-self: start; }
+}
+
+/* 5 ATENDIMENTO */
+.process { background: var(--gray-light); padding: 120px 24px; }
+.process .wrap { }
+.process .head { margin-bottom: 64px; }
+.process .head h2 { color: var(--navy); font-weight: 700; font-size: clamp(1.7rem, 2.4vw, 2.3rem); margin: 16px 0 0; line-height: 1.2; }
+.process-grid { display: grid; grid-template-columns: 1fr; gap: 64px; align-items: start; }
+@media (min-width: 900px) { .process-grid { grid-template-columns: repeat(3, 1fr); } }
+.step .step-num { color: var(--navy); opacity: 0.12; font-weight: 800; font-size: 4rem; line-height: 1; margin: 0; }
+.step .bar { width: 40px; height: 2px; background: var(--accent); margin: 16px 0 0; }
+.step h3 { color: var(--navy); font-weight: 700; font-size: 1.2rem; margin: 20px 0 0; }
+.step p { color: var(--gray-graphite); line-height: 1.7; margin: 12px 0 0; }
+
+/* 6 FORMAÇÃO */
+.edu { background: #FFFFFF; padding: 96px 24px; }
+.edu .head h2 { color: var(--navy); font-weight: 700; font-size: clamp(1.6rem, 2.2vw, 2.1rem); margin: 16px 0 0; line-height: 1.2; }
+.edu-grid { display: grid; grid-template-columns: 1fr; gap: 32px 48px; grid-auto-flow: row; margin-top: 56px; }
+@media (min-width: 800px) { .edu-grid { grid-template-columns: 1fr 1fr; } }
+.edu-item { border-top: 1px solid var(--line); padding-top: 20px; }
+.edu-item .course { color: var(--navy); font-weight: 600; margin: 0; font-size: 1.05rem; }
+.edu-item .inst { color: var(--gray-graphite); font-size: 14px; margin: 6px 0 0; }
+
+/* 7 AGENDAMENTO */
+.schedule { background: var(--gray-light); padding: 96px 24px; }
+.schedule .inner { max-width: 720px; margin: 0 auto; text-align: center; }
+.schedule h2 { color: var(--navy); font-weight: 600; font-size: clamp(1.5rem, 2vw, 2rem); margin: 16px 0 0; }
+.hours { margin-top: 48px; display: flex; justify-content: center; gap: 64px; flex-wrap: wrap; }
+.hours .h-label { color: var(--navy); font-weight: 700; font-size: 1.15rem; margin: 0; }
+.hours .h-val { color: var(--gray-graphite); font-size: 1rem; margin: 8px 0 0; }
+.contact-rule { border: 0; border-top: 1px solid var(--line); width: 100%; margin: 56px 0 0; }
+.contact-row {
+margin-top: 32px;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-wrap: wrap;
+gap: 40px;
+}
+.contact-row a {
+display: inline-flex;
+align-items: center;
+gap: 10px;
+color: var(--navy);
+font-size: 14px;
+font-weight: 500;
+text-decoration: none;
+transition: opacity 0.2s ease;
+}
+.contact-row a:hover { opacity: 0.7; }
+@media (max-width: 599px) {
+.contact-row { flex-direction: column; gap: 16px; }
+}
+
+/* 8 CTA FINAL */
+.final-cta { background: var(--deep); padding: 120px 24px; }
+.final-cta .inner { max-width: 800px; margin: 0 auto; text-align: center; }
+.final-cta h2 { color: #FFFFFF; font-weight: 700; font-size: clamp(1.8rem, 2.6vw, 2.6rem); line-height: 1.2; margin: 0; }
+.final-cta p { color: #FFFFFF; opacity: 0.6; margin: 20px 0 0; }
+.final-cta .btn-tinan { margin-top: 40px; padding: 18px 44px; }
+
+/* 9 RODAPÉ */
+.site-footer { background: #FFFFFF; padding: 48px 24px; border-top: 1px solid var(--line); text-align: center; }
+.site-footer img { height: 72px; width: auto; object-fit: contain; margin: 0 auto; }
+.site-footer p { color: var(--gray-graphite); font-size: 13px; margin: 12px 0 0; }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+<div class="wrap">
+<img src="https://i.imgur.com/p0HLNiJ.png" alt="Logo TINAN Centro de Fisioterapia & Saúde">
+<a class="back-link" href="index.html" aria-label="Voltar para o site da TINAN">← Voltar para o site</a>
+</div>
+</header>
+
+<main>
+<section class="opening" aria-labelledby="hero-title">
+<div class="opening-text">
+<div class="deco-circle" aria-hidden="true"></div>
+<div class="deco-line" aria-hidden="true"></div>
+<p class="label">Nutrição clínica, materno-infantil e esportiva</p>
+<h1 id="hero-title">Cuido da alimentação de gestantes, crianças e atletas para que cada fase da vida seja vivida com saúde <em>e equilíbrio</em>.</h1>
+<p class="name">Derislainy Tinan</p>
+<p class="role">Nutricionista · CRN-1 nº 26281/P</p>
+<a class="btn-tinan" href="https://wa.me/5564992399515?text=Ol%C3%A1%2C%20Derislainy!%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20nutricional." target="_blank" rel="noopener">Agendar avaliação</a>
+</div>
+<div class="opening-photo" role="img" aria-label="Derislainy Tinan, nutricionista da TINAN">
+<div class="blur-edge" aria-hidden="true"></div>
+</div>
+</section>
+
+<section class="quote-sec fade-in" aria-label="Filosofia de trabalho">
+<div class="inner">
+<p class="label">Minha filosofia</p>
+<div class="quote-mark" aria-hidden="true">“</div>
+<blockquote>Não acredito em planos alimentares desconectados da <strong>realidade</strong>. Meu trabalho é construir, junto com cada paciente, mudanças que caibam na sua rotina e se sustentem no tempo.</blockquote>
+<p class="sign">— Derislainy Tinan</p>
+</div>
+</section>
+
+<section class="treat fade-in" aria-labelledby="treat-title">
+<div class="wrap">
+<div class="treat-left">
+<p class="eyebrow-tina">O que eu trato</p>
+<h2 id="treat-title">Cuidado nutricional para cada fase da vida</h2>
+<p>Da gestação à infância, do emagrecimento ao desempenho esportivo — cada plano é construído a partir da realidade de quem está sendo atendido.</p>
+</div>
+<div class="treat-list">
+<article class="treat-item">
+<p class="num">01</p>
+<h3>Nutrição Materno-Infantil</h3>
+<p>Acompanhamento nutricional de gestantes, puérperas, bebês e crianças, incluindo diabetes gestacional, anemia, ganho de peso gestacional e introdução alimentar.</p>
+</article>
+<article class="treat-item">
+<p class="num">02</p>
+<h3>Nutrição Clínica e Reeducação Alimentar</h3>
+<p>Emagrecimento, melhora da composição corporal, organização da rotina alimentar e acompanhamento de condições clínicas relacionadas à alimentação.</p>
+</article>
+<article class="treat-item">
+<p class="num">03</p>
+<h3>Nutrição Esportiva</h3>
+<p>Estratégias nutricionais voltadas ao desempenho, à composição corporal e à adequação alimentar conforme o objetivo de cada pessoa.</p>
+</article>
+<article class="treat-item">
+<p class="num">04</p>
+<h3>Dificuldades Alimentares Infantis</h3>
+<p>Suporte nutricional em dificuldades relacionadas à alimentação da criança, com orientação prática para a família.</p>
+</article>
+</div>
+</div>
+</section>
+
+<section class="process fade-in" aria-labelledby="process-title">
+<div class="wrap">
+<div class="head">
+<p class="eyebrow-tina">Como é o atendimento</p>
+<h2 id="process-title">Três etapas, um plano feito para você</h2>
+</div>
+<div class="process-grid">
+<article class="step">
+<p class="step-num" aria-hidden="true">01</p>
+<div class="bar" aria-hidden="true"></div>
+<h3>Avaliação nutricional completa</h3>
+<p>Investigação detalhada do histórico de saúde, hábitos alimentares, rotina, preferências, dificuldades e objetivos, com avaliação antropométrica e bioimpedância quando indicadas.</p>
+</article>
+<article class="step">
+<p class="step-num" aria-hidden="true">02</p>
+<div class="bar" aria-hidden="true"></div>
+<h3>Planejamento individualizado</h3>
+<p>Elaboração de um plano alimentar compatível com a realidade do paciente, com orientações práticas e aplicáveis no dia a dia.</p>
+</article>
+<article class="step">
+<p class="step-num" aria-hidden="true">03</p>
+<div class="bar" aria-hidden="true"></div>
+<h3>Acompanhamento e ajustes</h3>
+<p>Avaliação da evolução ao longo do processo, com ajustes necessários para sustentar os resultados.</p>
+</article>
+</div>
+</div>
+</section>
+
+<section class="edu fade-in" aria-labelledby="edu-title">
+<div class="wrap">
+<div class="head">
+<p class="eyebrow-tina">Formação</p>
+<h2 id="edu-title">Base técnica e atualização constante</h2>
+</div>
+<div class="edu-grid">
+<article class="edu-item">
+<p class="course">Bacharelado em Nutrição</p>
+<p class="inst">Universidade Pitágoras Unopar Anhanguera · 2024</p>
+</article>
+<article class="edu-item">
+<p class="course">Pós-graduação em Nutrição Materno-Infantil</p>
+<p class="inst">Faculdade Líbano · 2025</p>
+</article>
+<article class="edu-item">
+<p class="course">Pós-graduação em Nutrição Clínica e Esportiva</p>
+<p class="inst">Faculdade Líbano · 2026</p>
+</article>
+</div>
+</div>
+</section>
+
+<section class="schedule fade-in" aria-labelledby="schedule-title">
+<div class="inner">
+<p class="eyebrow-tina">Agendamento</p>
+<h2 id="schedule-title">Quando estou disponível</h2>
+<div class="hours">
+<div>
+<p class="h-label">Horário de atendimento</p>
+<p class="h-val">Das 14h00 às 18h00</p>
+</div>
+</div>
+<hr class="contact-rule">
+<div class="contact-row">
+<a href="https://wa.me/5564992399515?text=Ol%C3%A1%2C%20Derislainy!%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20nutricional." target="_blank" rel="noopener" aria-label="WhatsApp (64) 99239-9515">
+<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#D51C24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+WhatsApp (64) 99239-9515
+</a>
+<a href="/cdn-cgi/l/email-protection#a8dcc1c6c9c6cec1dbc1c7dccddac9d8c1c9e8cfc5c9c1c486cbc7c5" aria-label="Enviar e-mail para tinanfisioterapia@gmail.com">
+<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#D51C24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+<span class="__cf_email__" data-cfemail="691d000708070f001a00061d0c1b08190008290e04080005470a0604">[email&#160;protected]</span>
+</a>
+<a href="https://instagram.com/derytinannutri" target="_blank" rel="noopener" aria-label="Instagram @derytinannutri">
+<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#D51C24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><line x1="17.5" y1="6.5" x2="17.5" y2="6.5"/></svg>
+@derytinannutri
+</a>
+</div>
+</div>
+</section>
+
+<section class="final-cta fade-in" aria-labelledby="cta-title">
+<div class="inner">
+<h2 id="cta-title">Sua alimentação pode ser mais simples do que parece.</h2>
+<p>Agende sua avaliação nutricional e comece com um plano feito para a sua rotina.</p>
+<a class="btn-tinan" href="https://wa.me/5564992399515?text=Ol%C3%A1%2C%20Derislainy!%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20nutricional." target="_blank" rel="noopener">Agendar pelo WhatsApp</a>
+</div>
+</section>
+</main>
+
+<footer class="site-footer">
+<img src="https://i.imgur.com/9ZmHz7W.png" alt="Logo TINAN Centro de Fisioterapia & Saúde">
+<p>TINAN Centro de Fisioterapia &amp; Saúde · Rua 8, Quadra 32, Lote 4, Sala 3 — Itaici 2, Caldas Novas — GO</p>
+<p>© 2026 TINAN Centro de Fisioterapia &amp; Saúde</p>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+document.addEventListener('DOMContentLoaded', function () {
+var items = document.querySelectorAll('.fade-in');
+if (!('IntersectionObserver' in window)) {
+items.forEach(function (el) { el.classList.add('is-visible'); });
+return;
+}
+var io = new IntersectionObserver(function (entries) {
+entries.forEach(function (entry) {
+if (entry.isIntersecting) {
+entry.target.classList.add('is-visible');
+io.unobserve(entry.target);
+}
+});
+}, { threshold: 0.12 });
+items.forEach(function (el) { io.observe(el); });
+});
+</script>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"7004b19d732d43b298810595cc4050b1","r":1,"spa":2}' crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head><script>if(location.pathname==="/2thllhknpt6s7ab5wan6j5cwpi")location.replace("/2thllhknpt6s7ab5wan6j5cwpi/"+location.search+location.hash)</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Perfil — Dr. Gustavo Crisóstomo | TINAN</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="shell.css">
+<script src="shell.js"></script>
+<style>
+:root {
+--accent: #D51C24;
+--accent-text: #B5151C;
+--accent-contrast: #FFFFFF;
+--navy: #1A3B5C;
+--navy-deep: #0F2438;
+--gray-light: #F4F6F8;
+--graphite: #5A6B7B;
+--divider: #E8ECEF;
+}
+*, *::before, *::after { box-sizing: border-box; }
+body {
+margin: 0;
+font-family: 'Montserrat', 'Poppins', 'Inter', system-ui, sans-serif;
+color: var(--navy);
+background: #FFFFFF;
+-webkit-font-smoothing: antialiased;
+}
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+
+/* Header */
+.site-header {
+position: sticky;
+top: 0;
+z-index: 100;
+background: rgba(15, 36, 56, 0.95);
+backdrop-filter: blur(8px);
+-webkit-backdrop-filter: blur(8px);
+padding: 20px 0;
+}
+.header-inner {
+max-width: 1200px;
+margin: 0 auto;
+padding: 0 24px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+gap: 16px;
+}
+.header-logo { height: 36px; width: auto; object-fit: contain; display: block; }
+.back-link {
+color: #FFFFFF;
+opacity: 0.7;
+text-decoration: none;
+font-size: 14px;
+font-weight: 500;
+transition: opacity 0.2s ease;
+}
+.back-link:hover { opacity: 1; }
+
+/* Editorial opening */
+.opening {
+display: grid;
+grid-template-columns: 1fr;
+min-height: 100vh;
+}
+.opening-text {
+position: relative;
+display: flex;
+align-items: center;
+background: linear-gradient(135deg, #FFFFFF 0%, #FAFBFC 55%, #F4F6F8 100%);
+padding: 64px 24px;
+overflow: hidden;
+order: 2;
+}
+.opening-text::before {
+content: "";
+position: absolute;
+left: -120px;
+bottom: -140px;
+width: 420px;
+height: 420px;
+border-radius: 50%;
+background: #D51C24;
+opacity: 0.03;
+pointer-events: none;
+}
+.opening-text::after {
+content: "";
+position: absolute;
+left: 40px;
+top: 0;
+width: 1px;
+height: 60%;
+background: #D51C24;
+opacity: 0.08;
+pointer-events: none;
+}
+.opening-content { position: relative; z-index: 1; max-width: 620px; }
+.eyebrow-label {
+color: var(--accent-text);
+text-transform: uppercase;
+letter-spacing: 0.2em;
+font-weight: 600;
+font-size: 12px;
+margin: 0;
+}
+.opening-title {
+color: var(--navy-deep);
+font-weight: 700;
+font-size: clamp(2rem, 3.2vw, 3.2rem);
+line-height: 1.15;
+letter-spacing: -0.03em;
+margin: 16px 0 0;
+}
+.opening-title .hl { color: var(--accent); }
+.opening-name {
+color: var(--navy);
+font-weight: 600;
+font-size: 20px;
+margin: 40px 0 0;
+}
+.opening-role { color: var(--graphite); font-size: 14px; margin: 6px 0 0; }
+.btn-cta {
+display: inline-block;
+background: var(--accent);
+color: #FFFFFF;
+padding: 16px 40px;
+border-radius: 4px;
+text-decoration: none;
+font-weight: 600;
+font-size: 15px;
+transition: background 0.2s ease, transform 0.2s ease;
+}
+.btn-cta:hover { background: #B5151C; transform: translateY(-1px); }
+.opening-cta { margin-top: 48px; }
+.opening-photo {
+position: relative;
+order: 1;
+aspect-ratio: 4 / 5;
+background-image: url('https://i.imgur.com/XyIgcWo.jpeg');
+background-size: cover;
+background-position: center top;
+background-repeat: no-repeat;
+}
+.opening-photo .blur-edge {
+position: absolute;
+inset: 0 auto 0 0;
+width: 40%;
+background: linear-gradient(to right, #FFFFFF 0%, rgba(255,255,255,0.85) 25%, rgba(255,255,255,0) 100%);
+-webkit-backdrop-filter: blur(12px);
+backdrop-filter: blur(12px);
+-webkit-mask-image: linear-gradient(to right, #000 0%, transparent 100%);
+mask-image: linear-gradient(to right, #000 0%, transparent 100%);
+pointer-events: none;
+}
+
+/* Quote section */
+.quote-section {
+background: var(--navy-deep);
+padding: 88px 24px;
+text-align: center;
+}
+.quote-container { max-width: 900px; margin: 0 auto; }
+.quote-section .eyebrow-label { text-align: center; }
+.quote-mark {
+display: block;
+font-size: 6rem;
+line-height: 0.8;
+color: var(--accent);
+opacity: 0.3;
+font-family: Georgia, serif;
+margin-top: 24px;
+}
+.quote-text {
+color: #FFFFFF;
+font-weight: 600;
+font-size: clamp(1.5rem, 2.2vw, 2.2rem);
+line-height: 1.5;
+margin: 0;
+}
+.quote-text strong { color: var(--accent); font-weight: 800; }
+.quote-signature {
+color: #FFFFFF;
+opacity: 0.55;
+font-style: italic;
+margin: 32px 0 0;
+font-size: 15px;
+}
+.quote-note {
+color: #FFFFFF;
+opacity: 0.4;
+font-style: italic;
+font-size: 14px;
+margin: 12px 0 0;
+}
+
+/* Section base */
+.section { padding: 80px 24px; }
+.section-inner { max-width: 1200px; margin: 0 auto; }
+.section-title {
+color: var(--navy);
+font-weight: 700;
+font-size: clamp(1.6rem, 2.4vw, 2.2rem);
+line-height: 1.2;
+margin: 12px 0 0;
+}
+.section-sub { color: var(--graphite); line-height: 1.7; margin: 24px 0 0; max-width: 520px; }
+
+/* Treatments */
+.treat-layout {
+display: grid;
+grid-template-columns: 1fr;
+gap: 48px;
+}
+.treat-left { position: static; }
+.treat-list { border-top: 1px solid var(--divider); }
+.treat-item {
+border-bottom: 1px solid var(--divider);
+padding: 32px 0;
+}
+.treat-num {
+color: var(--accent-text);
+font-weight: 700;
+text-transform: uppercase;
+letter-spacing: 0.15em;
+font-size: 13px;
+margin: 0;
+}
+.treat-title { color: var(--navy); font-weight: 700; font-size: 1.15rem; margin: 8px 0 0; }
+.treat-desc { color: var(--graphite); line-height: 1.7; margin: 8px 0 0; font-size: 15px; }
+
+/* Process */
+.process-section { background: var(--gray-light); }
+.process-grid {
+display: grid;
+grid-template-columns: 1fr;
+gap: 64px;
+align-items: start;
+margin-top: 56px;
+}
+.process-step { position: relative; }
+.process-num {
+color: var(--navy);
+opacity: 0.12;
+font-weight: 800;
+font-size: 4rem;
+line-height: 1;
+margin: 0;
+}
+.process-divider { width: 40px; height: 2px; background: var(--accent); margin: 16px 0 0; }
+.process-title { color: var(--navy); font-weight: 700; font-size: 1.1rem; margin: 20px 0 0; }
+.process-text { color: var(--graphite); line-height: 1.7; margin: 12px 0 0; font-size: 15px; }
+
+/* Formation */
+.formation-grid {
+display: grid;
+grid-template-columns: 1fr;
+gap: 32px 48px;
+grid-auto-flow: row;
+margin-top: 56px;
+}
+.formation-item { border-top: 1px solid var(--divider); padding-top: 20px; }
+.formation-course { color: var(--navy); font-weight: 600; font-size: 1.05rem; margin: 0; }
+.formation-inst { color: var(--graphite); font-size: 14px; margin: 8px 0 0; line-height: 1.6; }
+
+/* Scheduling */
+.schedule-section { background: var(--gray-light); padding: 96px 24px; }
+.schedule-wrap { max-width: 720px; margin: 0 auto; text-align: center; }
+.schedule-title { color: var(--navy); font-weight: 700; font-size: clamp(1.5rem, 2.2vw, 2rem); margin: 12px 0 0; }
+.schedule-times {
+margin-top: 48px;
+display: flex;
+justify-content: center;
+gap: 64px;
+flex-wrap: wrap;
+}
+.schedule-block { text-align: center; }
+.schedule-day { color: var(--navy); font-weight: 700; font-size: 1.2rem; margin: 0; }
+.schedule-hour { color: var(--graphite); font-size: 1rem; margin: 8px 0 0; }
+.contact-divider { width: 100%; height: 1px; background: var(--divider); margin-top: 56px; border: 0; }
+.contact-row {
+margin-top: 32px;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-wrap: wrap;
+gap: 40px;
+}
+.contact-link {
+display: inline-flex;
+align-items: center;
+gap: 10px;
+color: var(--navy);
+font-size: 14px;
+font-weight: 500;
+text-decoration: none;
+transition: opacity 0.2s ease;
+}
+.contact-link:hover { opacity: 0.7; }
+.contact-link svg { flex-shrink: 0; }
+
+/* Final CTA */
+.final-cta { background: var(--navy-deep); padding: 120px 24px; text-align: center; }
+.final-wrap { max-width: 800px; margin: 0 auto; }
+.final-title { color: #FFFFFF; font-weight: 700; font-size: clamp(1.8rem, 2.6vw, 2.6rem); line-height: 1.2; margin: 0; }
+.final-sub { color: #FFFFFF; opacity: 0.6; margin: 20px 0 0; }
+.final-cta .btn-cta { margin-top: 40px; padding: 18px 44px; }
+
+/* Footer */
+.site-footer {
+background: #FFFFFF;
+padding: 48px 24px;
+border-top: 1px solid var(--divider);
+text-align: center;
+}
+.footer-logo { height: 72px; width: auto; object-fit: contain; display: block; margin: 0 auto; }
+.footer-line { color: var(--graphite); font-size: 13px; margin: 16px 0 0; line-height: 1.6; }
+.footer-line + .footer-line { margin-top: 8px; }
+
+/* Fade in */
+.fade-in {
+opacity: 0;
+transform: translateY(24px);
+transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.fade-in.is-visible { opacity: 1; transform: none; }
+
+/* Desktop */
+@media (min-width: 900px) {
+.opening { grid-template-columns: 45fr 55fr; }
+.opening-text { order: 1; padding: 80px; }
+.opening-photo { order: 2; aspect-ratio: auto; min-height: 100vh; }
+.opening-photo .blur-edge { width: 30%; height: 100%; }
+.treat-layout { grid-template-columns: 35% 1fr; gap: 80px; }
+.treat-left { position: sticky; top: 100px; align-self: start; }
+.process-grid { grid-template-columns: repeat(3, 1fr); }
+.formation-grid { grid-template-columns: 1fr 1fr; }
+.section { padding: 120px 24px; }
+.quote-section { padding: 140px 24px; }
+}
+@media (max-width: 899px) {
+.opening-photo .blur-edge {
+inset: auto 0 0 0;
+width: 100%;
+height: 40%;
+background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,0.85) 75%, #FFFFFF 100%);
+-webkit-mask-image: none;
+mask-image: none;
+}
+}
+@media (prefers-reduced-motion: reduce) {
+.fade-in { transition: none; opacity: 1; transform: none; }
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+<div class="header-inner">
+<img class="header-logo" src="https://i.imgur.com/p0HLNiJ.png" alt="TINAN Centro de Fisioterapia & Saúde">
+<a class="back-link" href="index.html">← Voltar para o site</a>
+</div>
+</header>
+
+<main>
+<section class="opening" aria-labelledby="opening-title">
+<div class="opening-text">
+<div class="opening-content fade-in">
+<p class="eyebrow-label">Fisioterapia ortopédica e osteopatia</p>
+<h1 class="opening-title" id="opening-title">Cuidar vai muito além de tratar a dor: é compreender cada pessoa e devolver a ela a <span class="hl">liberdade de se movimentar.</span></h1>
+<p class="opening-name">Dr. Gustavo Crisóstomo</p>
+<p class="opening-role">Fisioterapeuta · CREFITO 433876-F</p>
+<div class="opening-cta">
+<a class="btn-cta" href="https://wa.me/5564984252882?text=Ol%C3%A1%2C%20Dr.%20Gustavo!%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o.">Agendar avaliação</a>
+</div>
+</div>
+</div>
+<div class="opening-photo" role="img" aria-label="Dr. Gustavo Crisóstomo, fisioterapeuta da TINAN">
+<div class="blur-edge" aria-hidden="true"></div>
+</div>
+</section>
+
+<section class="quote-section" aria-labelledby="quote-label">
+<div class="quote-container fade-in">
+<p class="eyebrow-label" id="quote-label">Minha filosofia</p>
+<span class="quote-mark" aria-hidden="true">“</span>
+<blockquote class="quote-text" style="margin:0">A dor é apenas uma parte da sua <strong>história</strong>, não o limite do que você é.</blockquote>
+<p class="quote-signature">— Dr. Gustavo Crisóstomo</p>
+<p class="quote-note">E lembre-se: menos dor e mais movimento!</p>
+</div>
+</section>
+
+<section class="section" aria-labelledby="treat-title">
+<div class="section-inner">
+<div class="treat-layout">
+<div class="treat-left fade-in">
+<p class="eyebrow-label">O que eu trato</p>
+<h2 class="section-title" id="treat-title">Investigar antes de tratar</h2>
+<p class="section-sub">Dores na coluna, lesões articulares e quadros ortopédicos — cada conduta nasce de uma avaliação criteriosa e de um raciocínio clínico individualizado.</p>
+</div>
+<div class="treat-list">
+<article class="treat-item fade-in">
+<p class="treat-num">01</p>
+<h3 class="treat-title">Dores na Coluna</h3>
+<p class="treat-desc">Tratamento de dores na coluna cervical, torácica e lombar, incluindo quadros com irradiação.</p>
+</article>
+<article class="treat-item fade-in">
+<p class="treat-num">02</p>
+<h3 class="treat-title">Lesões Musculoesqueléticas</h3>
+<p class="treat-desc">Atendimento de lesões musculares, articulares e limitações de movimento, com avaliação criteriosa.</p>
+</article>
+<article class="treat-item fade-in">
+<p class="treat-num">03</p>
+<h3 class="treat-title">Atendimentos Ortopédicos</h3>
+<p class="treat-desc">Acompanhamento de quadros ortopédicos em geral, como tendinopatias, bursites, disfunções articulares e pós-operatórios ortopédicos, com conduta direcionada ao raciocínio clínico.</p>
+</article>
+<article class="treat-item fade-in">
+<p class="treat-num">04</p>
+<h3 class="treat-title">Dor Persistente e Quadros Complexos</h3>
+<p class="treat-desc">Investigação aprofundada da história e do contexto de cada paciente para direcionar o tratamento.</p>
+</article>
+<article class="treat-item fade-in">
+<p class="treat-num">05</p>
+<h3 class="treat-title">Terapias Manuais e Osteopatia</h3>
+<p class="treat-desc">Uso de terapias manuais e recursos da Osteopatia integrados a um raciocínio clínico individualizado.</p>
+</article>
+</div>
+</div>
+</div>
+</section>
+
+<section class="section process-section" aria-labelledby="process-title">
+<div class="section-inner">
+<div class="fade-in">
+<p class="eyebrow-label">Como é o atendimento</p>
+<h2 class="section-title" id="process-title">Da conversa ao plano de tratamento</h2>
+</div>
+<div class="process-grid">
+<div class="process-step fade-in">
+<p class="process-num" aria-hidden="true">01</p>
+<div class="process-divider"></div>
+<h3 class="process-title">Conversa e história clínica</h3>
+<p class="process-text">Conhecimento da história, do que o paciente sente, seu histórico de saúde, rotina, dificuldades e expectativas.</p>
+</div>
+<div class="process-step fade-in">
+<p class="process-num" aria-hidden="true">02</p>
+<div class="process-divider"></div>
+<h3 class="process-title">Avaliação física direcionada</h3>
+<p class="process-text">Investigação de mobilidade, força, função e outros fatores relevantes para o caso, com raciocínio clínico.</p>
+</div>
+<div class="process-step fade-in">
+<p class="process-num" aria-hidden="true">03</p>
+<div class="process-divider"></div>
+<h3 class="process-title">Plano de tratamento com objetivos claros</h3>
+<p class="process-text">Compartilhamento das impressões clínicas e construção conjunta do plano, para que o paciente entenda o que está sendo tratado e participe da recuperação.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="section" aria-labelledby="formation-title">
+<div class="section-inner">
+<div class="fade-in">
+<p class="eyebrow-label">Formação</p>
+<h2 class="section-title" id="formation-title">Ortopedia, esporte e osteopatia em formação</h2>
+</div>
+<div class="formation-grid">
+<div class="formation-item fade-in">
+<p class="formation-course">Graduação em Fisioterapia</p>
+<p class="formation-inst">Universidade Federal de Jataí (UFJ) · 2024</p>
+</div>
+<div class="formation-item fade-in">
+<p class="formation-course">Pós-graduação em Fisioterapia Esportiva</p>
+<p class="formation-inst">Faculdade Prisma · 2025</p>
+</div>
+<div class="formation-item fade-in">
+<p class="formation-course">Formação em Osteopatia</p>
+<p class="formation-inst">Escola de Osteopatia de Madrid (EOM) · em andamento desde 2025</p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="schedule-section" aria-labelledby="schedule-title">
+<div class="schedule-wrap">
+<div class="fade-in">
+<p class="eyebrow-label">Agendamento</p>
+<h2 class="schedule-title" id="schedule-title">Quando estou disponível</h2>
+</div>
+<div class="schedule-times fade-in">
+<div class="schedule-block">
+<p class="schedule-day">Segunda a sexta</p>
+<p class="schedule-hour">Das 08h00 às 20h00</p>
+</div>
+</div>
+<hr class="contact-divider">
+<div class="contact-row fade-in">
+<a class="contact-link" href="https://wa.me/5564984252882?text=Ol%C3%A1%2C%20Dr.%20Gustavo!%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o.">
+<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#D51C24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+WhatsApp (64) 98425-2882
+</a>
+<a class="contact-link" href="/cdn-cgi/l/email-protection#a3c0d1cad0ccd0d7ccceccc5cad0cacce3c4cec2cacf8dc0ccce">
+<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#D51C24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+<span class="__cf_email__" data-cfemail="583b2a312b372b2c3735373e312b3137183f35393134763b3735">[email&#160;protected]</span>
+</a>
+<a class="contact-link" href="https://instagram.com/gusfisio" target="_blank" rel="noopener">
+<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#D51C24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><line x1="17.5" y1="6.5" x2="17.5" y2="6.5"/></svg>
+@gusfisio
+</a>
+</div>
+</div>
+</section>
+
+<section class="final-cta" aria-labelledby="final-title">
+<div class="final-wrap fade-in">
+<h2 class="final-title" id="final-title">Menos dor, mais movimento.</h2>
+<p class="final-sub">Agende sua avaliação e volte a se movimentar com confiança.</p>
+<a class="btn-cta" href="https://wa.me/5564984252882?text=Ol%C3%A1%2C%20Dr.%20Gustavo!%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o.">Agendar pelo WhatsApp</a>
+</div>
+</section>
+</main>
+
+<footer class="site-footer">
+<img class="footer-logo" src="https://i.imgur.com/9ZmHz7W.png" alt="Logo TINAN Centro de Fisioterapia & Saúde">
+<p class="footer-line">TINAN Centro de Fisioterapia &amp; Saúde · Rua 8, Quadra 32, Lote 4, Sala 3 — Itaici 2, Caldas Novas — GO</p>
+<p class="footer-line">© 2026 TINAN Centro de Fisioterapia &amp; Saúde</p>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+document.addEventListener('DOMContentLoaded', function () {
+var items = document.querySelectorAll('.fade-in');
+if (!('IntersectionObserver' in window)) {
+items.forEach(function (el) { el.classList.add('is-visible'); });
+return;
+}
+var observer = new IntersectionObserver(function (entries) {
+entries.forEach(function (entry) {
+if (entry.isIntersecting) {
+entry.target.classList.add('is-visible');
+observer.unobserve(entry.target);
+}
+});
+}, { threshold: 0.12 });
+items.forEach(function (el) { observer.observe(el); });
+});
+</script>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"7004b19d732d43b298810595cc4050b1","r":1,"spa":2}' crossorigin="anonymous"></script>
+</body>
+</html>

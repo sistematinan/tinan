@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head><script>if(location.pathname==="/wd73djbts6vyo2jwlzxx252ujy")location.replace("/wd73djbts6vyo2jwlzxx252ujy/"+location.search+location.hash)</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Perfil — Dr. André Tinan | TINAN</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="shell.css">
+<script src="shell.js"></script>
+<style>
+:root {
+--accent: #D51C24;
+--accent-text: #B5161D;
+--accent-contrast: #FFFFFF;
+--tinan-navy: #1A3B5C;
+--tinan-deep: #0F2438;
+--tinan-gray: #5A6B7B;
+--tinan-light: #F4F6F8;
+--tinan-line: #E8ECEF;
+--font-main: 'Montserrat', 'Poppins', 'Inter', system-ui, sans-serif;
+}
+html { scroll-behavior: smooth; }
+body {
+font-family: var(--font-main);
+color: var(--tinan-navy);
+background: #FFFFFF;
+margin: 0;
+-webkit-font-smoothing: antialiased;
+}
+a:focus-visible, button:focus-visible {
+outline: 3px solid var(--accent);
+outline-offset: 3px;
+border-radius: 4px;
+}
+.t-label {
+color: var(--accent-text);
+text-transform: uppercase;
+letter-spacing: 0.2em;
+font-weight: 600;
+font-size: 0.78rem;
+}
+.t-body-sm { font-size: 0.9rem; color: var(--tinan-gray); }
+
+/* Header */
+.site-header {
+position: sticky;
+top: 0;
+z-index: 100;
+background: rgba(15, 36, 56, 0.95);
+backdrop-filter: blur(8px);
+-webkit-backdrop-filter: blur(8px);
+padding: 20px 0;
+}
+.site-header-inner {
+display: flex;
+justify-content: space-between;
+align-items: center;
+max-width: 1200px;
+margin: 0 auto;
+padding: 0 24px;
+}
+.site-header img { height: 36px; width: auto; object-fit: contain; display: block; }
+.back-link {
+color: #FFFFFF;
+opacity: 0.7;
+text-decoration: none;
+font-size: 0.9rem;
+font-weight: 500;
+transition: opacity 0.2s ease;
+}
+.back-link:hover { opacity: 1; }
+
+/* Abertura editorial */
+.opening {
+display: grid;
+grid-template-columns: 1fr;
+min-height: auto;
+}
+.opening-text {
+position: relative;
+overflow: hidden;
+background: linear-gradient(135deg, #FFFFFF 0%, #FAFBFC 55%, #F4F6F8 100%);
+padding: 64px 24px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+order: 2;
+}
+.opening-text::before {
+content: "";
+position: absolute;
+left: -120px;
+bottom: -140px;
+width: 380px;
+height: 380px;
+border-radius: 50%;
+background: var(--accent);
+opacity: 0.03;
+pointer-events: none;
+}
+.opening-text::after {
+content: "";
+position: absolute;
+left: 40px;
+top: 0;
+width: 1px;
+height: 60%;
+background: var(--accent);
+opacity: 0.08;
+pointer-events: none;
+}
+.opening-text > * { position: relative; z-index: 1; }
+.opening-title {
+font-family: var(--font-main);
+color: var(--tinan-deep);
+font-weight: 700;
+font-size: clamp(2rem, 3.2vw, 3.2rem);
+line-height: 1.15;
+letter-spacing: -0.03em;
+margin: 16px 0 0;
+}
+.opening-title .hl { color: var(--accent); }
+.opening-name {
+color: var(--tinan-navy);
+font-weight: 600;
+font-size: 1.05rem;
+margin: 40px 0 0;
+}
+.opening-role {
+color: var(--tinan-gray);
+font-size: 0.9rem;
+margin: 6px 0 0;
+}
+.btn-cta {
+display: inline-block;
+background: var(--accent);
+color: #FFFFFF;
+padding: 16px 40px;
+border-radius: 4px;
+text-decoration: none;
+font-weight: 600;
+font-size: 0.95rem;
+margin-top: 48px;
+width: fit-content;
+transition: background 0.2s ease, transform 0.2s ease;
+}
+.btn-cta:hover { background: var(--accent-text); transform: translateY(-1px); }
+.opening-photo {
+position: relative;
+aspect-ratio: 4 / 5;
+background-image: url('https://i.imgur.com/Yin6WeF.png');
+background-size: cover;
+background-position: center top;
+background-repeat: no-repeat;
+order: 1;
+}
+.opening-photo img.sr { display: none; }
+.opening-photo::before {
+content: "";
+position: absolute;
+inset: 0 auto 0 0;
+width: 30%;
+background: linear-gradient(to right, #FFFFFF 0%, rgba(255,255,255,0.85) 25%, rgba(255,255,255,0) 100%);
+backdrop-filter: blur(12px);
+-webkit-backdrop-filter: blur(12px);
+-webkit-mask-image: linear-gradient(to right, #000 0%, transparent 100%);
+mask-image: linear-gradient(to right, #000 0%, transparent 100%);
+}
+.opening-photo::after {
+content: "";
+position: absolute;
+left: 0;
+right: 0;
+bottom: 0;
+height: 0;
+}
+.opening-photo[data-alt-done] {}
+
+/* Fade-in */
+.fade-in {
+opacity: 0;
+transform: translateY(24px);
+transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.fade-in.is-visible { opacity: 1; transform: none; }
+
+/* Citação */
+.quote-section {
+background: var(--tinan-deep);
+padding: 88px 24px;
+}
+.quote-wrap { max-width: 900px; margin: 0 auto; text-align: center; }
+.quote-mark {
+font-size: 6rem;
+line-height: 0.6;
+color: var(--accent);
+opacity: 0.3;
+font-family: Georgia, serif;
+display: block;
+height: 40px;
+}
+.quote-text {
+color: #FFFFFF;
+font-weight: 600;
+font-size: clamp(1.5rem, 2.2vw, 2.2rem);
+line-height: 1.5;
+margin: 16px 0 0;
+}
+.quote-text .hl { color: var(--accent); font-weight: 800; }
+.quote-sign {
+color: #FFFFFF;
+opacity: 0.55;
+font-style: italic;
+margin-top: 32px;
+font-size: 1rem;
+}
+
+/* Seção O que eu trato */
+.section { padding: 88px 24px; }
+.two-col {
+max-width: 1200px;
+margin: 0 auto;
+display: grid;
+grid-template-columns: 1fr;
+gap: 48px;
+}
+.sticky-left { position: static; }
+.section-title {
+color: var(--tinan-navy);
+font-weight: 700;
+font-size: clamp(1.6rem, 2.4vw, 2.2rem);
+line-height: 1.2;
+margin: 12px 0 0;
+}
+.section-lead {
+color: var(--tinan-gray);
+line-height: 1.7;
+margin-top: 24px;
+}
+.treat-list { list-style: none; padding: 0; margin: 0; }
+.treat-item {
+border-top: 1px solid var(--tinan-line);
+padding: 32px 0;
+}
+.treat-item:last-child { border-bottom: 1px solid var(--tinan-line); }
+.treat-num {
+color: var(--accent-text);
+font-weight: 700;
+letter-spacing: 0.15em;
+text-transform: uppercase;
+font-size: 0.85rem;
+}
+.treat-title {
+color: var(--tinan-navy);
+font-weight: 700;
+margin-top: 8px;
+font-size: 1.1rem;
+}
+.treat-desc {
+color: var(--tinan-gray);
+line-height: 1.7;
+margin-top: 8px;
+}
+
+/* Atendimento */
+.bg-light { background: var(--tinan-light); }
+.steps-grid {
+max-width: 1200px;
+margin: 56px auto 0;
+display: grid;
+grid-template-columns: 1fr;
+gap: 64px;
+align-items: start;
+}
+.step-num {
+color: var(--tinan-navy);
+opacity: 0.12;
+font-weight: 800;
+font-size: 4rem;
+line-height: 1;
+}
+.step-divider {
+width: 40px;
+height: 2px;
+background: var(--accent);
+margin: 12px 0 0;
+}
+.step-title {
+color: var(--tinan-navy);
+font-weight: 700;
+margin-top: 20px;
+font-size: 1.1rem;
+}
+.step-text {
+color: var(--tinan-gray);
+line-height: 1.7;
+margin-top: 12px;
+}
+
+/* Formação */
+.edu-grid {
+max-width: 1200px;
+margin: 48px auto 0;
+display: grid;
+grid-template-columns: 1fr;
+grid-auto-flow: row;
+gap: 32px 48px;
+}
+.edu-item {
+border-top: 1px solid var(--tinan-line);
+padding-top: 20px;
+}
+.edu-course {
+color: var(--tinan-navy);
+font-weight: 600;
+font-size: 1.05rem;
+}
+.edu-inst {
+color: var(--tinan-gray);
+font-size: 0.9rem;
+margin-top: 6px;
+}
+
+/* Agendamento */
+.schedule {
+max-width: 720px;
+margin: 0 auto;
+text-align: center;
+}
+.schedule-slots {
+margin-top: 48px;
+display: flex;
+justify-content: center;
+gap: 64px;
+flex-wrap: wrap;
+}
+.slot-day {
+color: var(--tinan-navy);
+font-weight: 700;
+font-size: 1.15rem;
+}
+.slot-time {
+color: var(--tinan-gray);
+font-size: 1rem;
+margin-top: 8px;
+}
+.contact-line {
+margin-top: 56px;
+border-top: 1px solid var(--tinan-line);
+width: 100%;
+}
+.contact-links {
+margin-top: 32px;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-wrap: wrap;
+gap: 40px;
+}
+.contact-links a {
+display: inline-flex;
+align-items: center;
+gap: 10px;
+color: var(--tinan-navy);
+font-size: 14px;
+font-weight: 500;
+text-decoration: none;
+transition: opacity 0.2s ease;
+}
+.contact-links a:hover { opacity: 0.7; }
+.contact-links svg { flex-shrink: 0; }
+
+/* CTA final */
+.cta-final {
+background: var(--tinan-deep);
+padding: 120px 24px;
+text-align: center;
+}
+.cta-wrap { max-width: 800px; margin: 0 auto; }
+.cta-title {
+color: #FFFFFF;
+font-weight: 700;
+font-size: clamp(1.8rem, 2.6vw, 2.6rem);
+line-height: 1.2;
+margin: 0;
+}
+.cta-sub {
+color: #FFFFFF;
+opacity: 0.6;
+margin-top: 20px;
+}
+.btn-cta-final {
+display: inline-block;
+background: var(--accent);
+color: #FFFFFF;
+padding: 18px 44px;
+border-radius: 4px;
+text-decoration: none;
+font-weight: 600;
+margin-top: 40px;
+transition: background 0.2s ease, transform 0.2s ease;
+}
+.btn-cta-final:hover { background: var(--accent-text); transform: translateY(-1px); }
+
+/* Rodapé */
+.site-footer {
+background: #FFFFFF;
+padding: 48px 24px;
+border-top: 1px solid var(--tinan-line);
+text-align: center;
+}
+.site-footer img { height: 72px; width: auto; object-fit: contain; display: block; margin: 0 auto; }
+.site-footer p { color: var(--tinan-gray); font-size: 0.9rem; margin: 12px 0 0; }
+.site-footer p.copy { margin-top: 8px; }
+
+/* Desktop */
+@media (min-width: 900px) {
+.opening { grid-template-columns: 55fr 45fr; min-height: 100vh; }
+.opening-text { order: 1; padding: 80px; }
+.opening-photo { order: 2; aspect-ratio: auto; height: 100%; min-height: 100vh; }
+.opening-photo::before {
+inset: 0 auto 0 0;
+width: 25%;
+height: 100%;
+}
+.two-col { grid-template-columns: 35fr 65fr; gap: 80px; }
+.sticky-left { position: sticky; top: 100px; align-self: start; }
+.section { padding: 120px 24px; }
+.steps-grid { grid-template-columns: repeat(3, 1fr); }
+.edu-grid { grid-template-columns: 1fr 1fr; }
+.quote-section { padding: 140px 24px; }
+.cta-final { padding: 120px 24px; }
+}
+@media (max-width: 899px) {
+.opening-photo::before {
+inset: auto 0 0 0;
+width: 100%;
+height: 30%;
+background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,0.85) 75%, #FFFFFF 100%);
+-webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 100%);
+mask-image: linear-gradient(to bottom, transparent 0%, #000 100%);
+}
+}
+@media (prefers-reduced-motion: reduce) {
+.fade-in { transition: none; opacity: 1; transform: none; }
+html { scroll-behavior: auto; }
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+<div class="site-header-inner">
+<img src="https://i.imgur.com/p0HLNiJ.png" alt="Logo TINAN Centro de Fisioterapia & Saúde">
+<a href="index.html" class="back-link" aria-label="Voltar para o site da TINAN">← Voltar para o site</a>
+</div>
+</header>
+
+<section class="opening" aria-label="Abertura">
+<div class="opening-text">
+<span class="t-label">Fisioterapia traumato-ortopédica e desportiva</span>
+<h1 class="opening-title">A intensidade do alto rendimento.<br>A precisão de um <span class="hl">tratamento individualizado.</span></h1>
+<p class="opening-name">Dr. André Tinan</p>
+<p class="opening-role">Fisioterapeuta · CREFITO 395766-F</p>
+<a class="btn-cta" href="https://wa.me/5564992399515?text=Ol%C3%A1%2C%20Dr.%20Andr%C3%A9!%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener">Agendar avaliação</a>
+</div>
+<div class="opening-photo" role="img" aria-label="Dr. André Tinan, fisioterapeuta da TINAN"></div>
+</section>
+
+<section class="quote-section" aria-label="Filosofia">
+<div class="quote-wrap fade-in">
+<span class="t-label" style="color: var(--accent);">Minha filosofia</span>
+<span class="quote-mark" aria-hidden="true">“</span>
+<p class="quote-text">Conheço não apenas os aspectos físicos de uma lesão, mas também a frustração de estar limitado e a importância de recuperar a <span class="hl">confiança</span> no próprio corpo.</p>
+<p class="quote-sign">— Dr. André Tinan</p>
+</div>
+</section>
+
+<section class="section" aria-labelledby="trato-title">
+<div class="two-col">
+<div class="sticky-left fade-in">
+<span class="t-label">O que eu trato</span>
+<h2 class="section-title" id="trato-title">Do consultório ao retorno ao esporte</h2>
+<p class="section-lead">Lesões do joelho, reabilitação pós-cirúrgica e retorno seguro ao movimento — cada caso é conduzido com avaliação criteriosa e atenção individualizada.</p>
+</div>
+<ul class="treat-list">
+<li class="treat-item fade-in">
+<div class="treat-num">01</div>
+<h3 class="treat-title">Reabilitação pós-cirúrgica de LCA</h3>
+<p class="treat-desc">Reabilitação após reconstrução do ligamento cruzado anterior, com condução criteriosa de cada fase da recuperação.</p>
+</li>
+<li class="treat-item fade-in">
+<div class="treat-num">02</div>
+<h3 class="treat-title">Cirurgias meniscais e lesões articulares</h3>
+<p class="treat-desc">Acompanhamento de pós-operatório de cirurgias meniscais e de lesões articulares, com foco no retorno seguro à função.</p>
+</li>
+<li class="treat-item fade-in">
+<div class="treat-num">03</div>
+<h3 class="treat-title">Lesões musculares e do joelho</h3>
+<p class="treat-desc">Tratamento de lesões musculares e das principais disfunções do joelho, com avaliação individualizada.</p>
+</li>
+<li class="treat-item fade-in">
+<div class="treat-num">04</div>
+<h3 class="treat-title">Retorno ao esporte e à funcionalidade</h3>
+<p class="treat-desc">Reabilitação voltada tanto ao atleta que busca retornar ao esporte quanto à pessoa que quer recuperar autonomia e qualidade de vida.</p>
+</li>
+</ul>
+</div>
+</section>
+
+<section class="section bg-light" aria-labelledby="atendimento-title">
+<div class="fade-in" style="max-width:1200px;margin:0 auto;">
+<span class="t-label">Como é o atendimento</span>
+<h2 class="section-title" id="atendimento-title">Tempo, escuta e transparência</h2>
+</div>
+<div class="steps-grid">
+<div class="fade-in">
+<div class="step-num" aria-hidden="true">01</div>
+<div class="step-divider"></div>
+<h3 class="step-title">Avaliação cuidadosa e escuta</h3>
+<p class="step-text">O paciente tem espaço para contar sua história, explicar suas dificuldades e apresentar suas expectativas antes de qualquer conduta.</p>
+</div>
+<div class="fade-in">
+<div class="step-num" aria-hidden="true">02</div>
+<div class="step-divider"></div>
+<h3 class="step-title">Compreensão do problema e do seu impacto</h3>
+<p class="step-text">Identificação das estruturas e funções comprometidas, de como a condição interfere na rotina e das melhores estratégias terapêuticas disponíveis.</p>
+</div>
+<div class="fade-in">
+<div class="step-num" aria-hidden="true">03</div>
+<div class="step-divider"></div>
+<h3 class="step-title">Plano transparente e compartilhado</h3>
+<p class="step-text">Apresentação honesta das possibilidades de tratamento, incluindo benefícios, limitações e dificuldades, para que o paciente compreenda sua condição e participe das decisões.</p>
+</div>
+</div>
+</section>
+
+<section class="section" aria-labelledby="formacao-title">
+<div style="max-width:1200px;margin:0 auto;" class="fade-in">
+<span class="t-label">Formação</span>
+<h2 class="section-title" id="formacao-title">Base em reabilitação traumato-ortopédica e desportiva</h2>
+</div>
+<div class="edu-grid">
+<div class="edu-item fade-in">
+<p class="edu-course">Graduação em Fisioterapia</p>
+<p class="edu-inst">Centro Universitário UNA · 2022</p>
+</div>
+<div class="edu-item fade-in">
+<p class="edu-course">Pós-graduação em Fisioterapia Traumato-Ortopédica e Desportiva</p>
+<p class="edu-inst">Anhanguera · Em conclusão</p>
+</div>
+</div>
+</section>
+
+<section class="section bg-light" aria-labelledby="agenda-title" style="padding-bottom:96px;">
+<div class="schedule fade-in">
+<span class="t-label">Agendamento</span>
+<h2 class="section-title" id="agenda-title">Quando estou disponível</h2>
+<div class="schedule-slots">
+<div>
+<p class="slot-day">Segunda a sexta</p>
+<p class="slot-time">Das 13h00 às 20h00</p>
+</div>
+</div>
+<div class="contact-line"></div>
+<div class="contact-links">
+<a href="https://wa.me/5564992399515?text=Ol%C3%A1%2C%20Dr.%20Andr%C3%A9!%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener" aria-label="Conversar pelo WhatsApp">
+<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#D51C24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+WhatsApp (64) 99239-9515
+</a>
+<a href="/cdn-cgi/l/email-protection#c4b0adaaa5aaa2adb7adabb0a1b6a5b4ada584a3a9a5ada8eaa7aba9" aria-label="Enviar e-mail">
+<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#D51C24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+<span class="__cf_email__" data-cfemail="dca8b5b2bdb2bab5afb5b3a8b9aebdacb5bd9cbbb1bdb5b0f2bfb3b1">[email&#160;protected]</span>
+</a>
+<a href="https://instagram.com/andretinanfisio" target="_blank" rel="noopener" aria-label="Instagram do Dr. André Tinan">
+<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#D51C24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><line x1="17.5" y1="6.5" x2="17.5" y2="6.5"/></svg>
+@andretinanfisio
+</a>
+</div>
+</div>
+</section>
+
+<section class="cta-final" aria-labelledby="cta-title">
+<div class="cta-wrap fade-in">
+<h2 class="cta-title" id="cta-title">Volte a se movimentar com confiança.</h2>
+<p class="cta-sub">Agende sua avaliação e comece uma reabilitação conduzida com critério e propósito.</p>
+<a class="btn-cta-final" href="https://wa.me/5564992399515?text=Ol%C3%A1%2C%20Dr.%20Andr%C3%A9!%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener">Agendar pelo WhatsApp</a>
+</div>
+</section>
+
+<footer class="site-footer">
+<img src="https://i.imgur.com/9ZmHz7W.png" alt="Logo TINAN Centro de Fisioterapia & Saúde">
+<p>TINAN Centro de Fisioterapia &amp; Saúde · Rua 8, Quadra 32, Lote 4, Sala 3 — Itaici 2, Caldas Novas — GO</p>
+<p class="copy">© 2026 TINAN Centro de Fisioterapia &amp; Saúde</p>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+document.addEventListener('DOMContentLoaded', function () {
+var items = document.querySelectorAll('.fade-in');
+if (!('IntersectionObserver' in window)) {
+items.forEach(function (el) { el.classList.add('is-visible'); });
+return;
+}
+var io = new IntersectionObserver(function (entries) {
+entries.forEach(function (entry) {
+if (entry.isIntersecting) {
+entry.target.classList.add('is-visible');
+io.unobserve(entry.target);
+}
+});
+}, { threshold: 0.12 });
+items.forEach(function (el) { io.observe(el); });
+});
+</script>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"7004b19d732d43b298810595cc4050b1","r":1,"spa":2}' crossorigin="anonymous"></script>
+</body>
+</html>
