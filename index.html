@@ -414,6 +414,14 @@
       font-size: 13px;
     }
 
+    /* Container dos cards dinâmicos */
+    #avaliacoes-lista {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      flex: 1;
+    }
+
     .avaliacao-card {
       background: var(--branco);
       border-radius: var(--raio);
@@ -444,6 +452,12 @@
       color: var(--texto-suave);
       font-size: 14px;
       line-height: 1.6;
+    }
+
+    .avaliacao-card .quando {
+      color: #9AA5B1;
+      font-size: 12px;
+      margin-top: 8px;
     }
 
     .avaliacoes-link {
@@ -640,7 +654,7 @@
           </div>
         </a>
 
-        <a href="profissionais/anapaula.html" class="card-profissional">
+        <a href="profissionais/ana.html" class="card-profissional">
           <img src="imagens/profissional-ana.jpeg" alt="Dra. Ana Paula Moreira Gomes Lopes">
           <div class="card-profissional-info">
             <h3>Dra. Ana Paula Moreira Gomes Lopes</h3>
@@ -676,74 +690,28 @@
 
         <div class="mapa-bloco">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3799.636031656362!2d-48.61947021238209!3d-17.761780739849282!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94a731a16f3f2cc5%3A0x47adfd489bf20e6e!2sTinan%20-%20Centro%20de%20Fisioterapia%20e%20Sa%C3%BAde!5e0!3m2!1spt-BR!2sbr!4v1794061381194!5m2!1spt-BR!2sbr"
+            src="https://www.google.com/maps?q=Rua+8,+Quadra+32,+Lote+4,+Sala+3,+Itaici+2,+Caldas+Novas+-+GO&output=embed"
             loading="lazy"
-            referrerpolicy="strict-origin-when-cross-origin"
+            referrerpolicy="no-referrer-when-downgrade"
             title="Localização da TINAN no Google Maps">
           </iframe>
         </div>
 
         <div class="avaliacoes-bloco">
           <div class="avaliacoes-cabecalho">
-            <span class="avaliacoes-nota">5,0</span>
+            <span class="avaliacoes-nota" id="avaliacoes-nota">5,0</span>
             <div>
               <div class="avaliacoes-estrelas">★★★★★</div>
-              <div class="avaliacoes-total">Avaliações no Google</div>
+              <div class="avaliacoes-total" id="avaliacoes-total">Avaliações no Google</div>
             </div>
           </div>
 
-         <div class="avaliacoes-bloco">
-  <div class="avaliacoes-cabecalho">
-    <span class="avaliacoes-nota" id="avaliacoes-nota">5,0</span>
-    <div>
-      <div class="avaliacoes-estrelas">★★★★★</div>
-      <div class="avaliacoes-total" id="avaliacoes-total">Avaliações no Google</div>
-    </div>
-  </div>
+          <div id="avaliacoes-lista"></div>
 
-  <div id="avaliacoes-lista"></div>
-
-  <a href="https://www.google.com/maps/place/?q=place_id:ChIJxSw_b6Exp5QRbg7ym0j9rUc"
-     target="_blank" rel="noopener" class="avaliacoes-link">
-    Ver todas as avaliações no Google →
-  </a>
-</div>
-
-         <div class="avaliacoes-bloco">
-  <div class="avaliacoes-cabecalho">
-    <span class="avaliacoes-nota" id="avaliacoes-nota">5,0</span>
-    <div>
-      <div class="avaliacoes-estrelas">★★★★★</div>
-      <div class="avaliacoes-total" id="avaliacoes-total">Avaliações no Google</div>
-    </div>
-  </div>
-
-  <div id="avaliacoes-lista"></div>
-
-  <a href="https://www.google.com/maps/place/?q=place_id:ChIJxSw_b6Exp5QRbg7ym0j9rUc"
-     target="_blank" rel="noopener" class="avaliacoes-link">
-    Ver todas as avaliações no Google →
-  </a>
-</div>
-
-          <div class="avaliacoes-bloco">
-  <div class="avaliacoes-cabecalho">
-    <span class="avaliacoes-nota" id="avaliacoes-nota">5,0</span>
-    <div>
-      <div class="avaliacoes-estrelas">★★★★★</div>
-      <div class="avaliacoes-total" id="avaliacoes-total">Avaliações no Google</div>
-    </div>
-  </div>
-
-  <div id="avaliacoes-lista"></div>
-
-  <a href="https://www.google.com/maps/place/?q=place_id:ChIJxSw_b6Exp5QRbg7ym0j9rUc"
-     target="_blank" rel="noopener" class="avaliacoes-link">
-    Ver todas as avaliações no Google →
-  </a>
-</div>
-
-          <a href="https://www.google.com/maps/search/?api=1&query=Rua+8,+Quadra+32,+Lote+4,+Sala+3,+Itaici+2,+Caldas+Novas+-+GO" target="_blank" rel="noopener" class="avaliacoes-link">Ver todas as avaliações no Google →</a>
+          <a href="https://www.google.com/maps/place/?q=place_id:ChIJxSw_b6Exp5QRbg7ym0j9rUc"
+             target="_blank" rel="noopener" class="avaliacoes-link">
+            Ver todas as avaliações no Google →
+          </a>
         </div>
 
       </div>
@@ -795,6 +763,7 @@
   </footer>
 
   <script>
+    /* ---------- Barra fixa no scroll ---------- */
     const barraFixa = document.getElementById('barraFixa');
     const topo = document.querySelector('.topo');
 
@@ -806,6 +775,53 @@
         barraFixa.classList.remove('visivel');
       }
     }, { passive: true });
+  </script>
+
+  <script>
+    /* ---------- Avaliações do Google (via Worker) ---------- */
+    (async function () {
+      const lista = document.getElementById('avaliacoes-lista');
+      if (!lista) return;
+
+      try {
+        const resposta = await fetch('https://tinan-avaliacoes.tinanfisioterapia.workers.dev');
+        const dados = await resposta.json();
+
+        if (dados.nota) {
+          document.getElementById('avaliacoes-nota').textContent =
+            dados.nota.toFixed(1).replace('.', ',');
+        }
+
+        if (dados.total) {
+          document.getElementById('avaliacoes-total').textContent =
+            dados.total + ' avaliações no Google';
+        }
+
+        const avaliacoes = dados.avaliacoes || [];
+
+        if (avaliacoes.length === 0) {
+          lista.innerHTML =
+            '<div class="avaliacao-card"><p class="texto">Ainda não há comentários públicos para exibir.</p></div>';
+          return;
+        }
+
+        lista.innerHTML = avaliacoes.map(function (a) {
+          const nota = Math.max(1, Math.min(5, a.nota || 5));
+          return (
+            '<div class="avaliacao-card">' +
+              '<p class="autor">' + a.autor + '</p>' +
+              '<p class="estrelas">' + '★'.repeat(nota) + '</p>' +
+              '<p class="texto">' + a.texto + '</p>' +
+              (a.quando ? '<p class="quando">' + a.quando + '</p>' : '') +
+            '</div>'
+          );
+        }).join('');
+
+      } catch (erro) {
+        lista.innerHTML =
+          '<div class="avaliacao-card"><p class="texto">Avaliações indisponíveis no momento.</p></div>';
+      }
+    })();
   </script>
 
 </body>
