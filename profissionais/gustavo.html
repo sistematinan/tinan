@@ -5,7 +5,13 @@
 <script>document.documentElement.classList.add("js")</script>
 <link rel="icon" href="../imagens/logo-tinancirculo.png">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Perfil — Dr. Gustavo Crisóstomo | TINAN</title>
+<title>Dr. Gustavo Crisóstomo | Fisioterapeuta em Caldas Novas – Coluna, Hérnia de Disco e Técnicas Osteopáticas</title>
+<meta name="description" content="Fisioterapia ortopédica e técnicas osteopáticas em Caldas Novas (GO) para hérnia de disco, dor na coluna, dor ciática, tendinites e dores persistentes. Agende pelo WhatsApp.">
+<link rel="canonical" href="https://tinan.com.br/profissionais/gustavo.html">
+<meta property="og:title" content="Dr. Gustavo Crisóstomo | Fisioterapeuta em Caldas Novas – Coluna, Hérnia de Disco e Técnicas Osteopáticas">
+<meta property="og:description" content="Fisioterapia ortopédica e técnicas osteopáticas em Caldas Novas (GO) para hérnia de disco, dor na coluna, dor ciática, tendinites e dores persistentes. Agende pelo WhatsApp.">
+<meta property="og:image" content="https://tinan.com.br/imagens/profissional-gustavo-card.jpg">
+<meta property="og:type" content="profile">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
@@ -372,6 +378,30 @@ mask-image: none;
 .equipe-card em { font-style: normal; color: #15344F; font-weight: 700; font-size: 14px; margin-top: auto; padding-top: 14px; }
 .equipe-card:hover em { color: #E31D2B; }
 @media (max-width: 760px) { .equipe-grid { grid-template-columns: 1fr; } .equipe-card { flex-direction: row; } .equipe-card img { width: 110px; aspect-ratio: auto; height: auto; } }
+
+/* Casos que atendo */
+.casos { margin-top: 28px; }
+.casos-rotulo { font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: #E31D2B; margin: 0 0 10px; }
+.casos ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.casos li { font-size: 13px; font-weight: 500; color: #15344F; background: #EEF1F4; padding: 6px 12px; border-radius: 999px; }
+/* Topo menor: a foto não ocupa mais a tela inteira */
+@media (min-width: 900px) {
+  .hero, .opening { min-height: min(72vh, 640px) !important; }
+  .hero-photo, .opening-photo { min-height: 0 !important; height: auto !important; }
+}
+@media (max-width: 899px) {
+  .hero-photo, .opening-photo { aspect-ratio: 1 / 1 !important; background-position: center 20% !important; }
+  /* no celular, só um degradê suave na base da foto, sem o borrão cinza */
+  .hero-photo::after, .hero-photo::before, .opening-photo::after, .opening-photo::before, .opening-photo .blur-edge {
+    backdrop-filter: none !important; -webkit-backdrop-filter: none !important;
+  }
+}
+/* WhatsApp flutuante: só no celular */
+.whats-flutuante { display: none; }
+@media (max-width: 980px) {
+  .whats-flutuante { position: fixed; right: 16px; bottom: 16px; z-index: 1100; width: 54px; height: 54px; border-radius: 50%; background: #25D366; color: #fff; display: grid; place-items: center; box-shadow: 0 8px 24px rgba(0,0,0,.25); }
+  .whats-flutuante svg { width: 30px; height: 30px; }
+}
 </style>
 </head>
 <body>
@@ -418,6 +448,7 @@ mask-image: none;
 <p class="eyebrow-label">O que eu trato</p>
 <h2 class="section-title" id="treat-title">Investigar antes de tratar</h2>
 <p class="section-sub">Dores na coluna, lesões articulares e quadros ortopédicos — cada conduta nasce de uma avaliação criteriosa e de um raciocínio clínico individualizado.</p>
+<div class="casos"><p class="casos-rotulo">Casos que atendo</p><ul><li>Hérnia de disco</li><li>Dor na coluna</li><li>Dor lombar e cervical</li><li>Dor ciática</li><li>Bico de papagaio (artrose)</li><li>Tendinites e bursites</li><li>Dor no ombro e no quadril</li><li>Torcicolo</li><li>Dor persistente</li></ul></div>
 </div>
 <div class="treat-list">
 <article class="treat-item fade-in">
@@ -579,5 +610,6 @@ items.forEach(function (el) { observer.observe(el); });
 });
 </script>
 
+<a class="whats-flutuante" href="https://wa.me/5564992399515?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20fisioterap%C3%AAutica%20com%20o%20Dr.%20Gustavo%20Cris%C3%B3stomo." target="_blank" rel="noopener" aria-label="Agendar pelo WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.3 7.4L3 21l2.1-5.6A8.5 8.5 0 1 1 21 11.5z"/><path d="M9 9.5c0 3 2.5 5.5 5.5 5.5l1-1.5-2-1-1 .8a4 4 0 0 1-2-2l.8-1-1-2z" fill="currentColor" stroke="none"/></svg></a>
 </body>
 </html>
