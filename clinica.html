@@ -14,7 +14,336 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/site.css">
+  <style>
+/* 1. VARIÁVEIS DA MARCA */
+:root {
+  --azul:        #15344F;
+  --azul-medio:  #26445E;
+  --azul-escuro: #0F2438;
+  --vermelho:    #E31D2B;
+  --vermelho-escuro: #C2141F;
+  --fundo:       #EEF1F4;
+  --branco:      #FFFFFF;
+  --texto:       #2B2B2B;
+  --texto-suave: #4D5864;
+  --borda:       #E3E7EC;
+  --whats:       #25D366;
+  --fonte: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --largura: 1180px;
+  --raio: 14px;
+  --sombra: 0 4px 20px rgba(21, 52, 79, 0.08);
+  --sombra-forte: 0 16px 40px rgba(21, 52, 79, 0.16);
+}
+
+/* 2. RESET E BASE */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 76px; }
+body {
+  font-family: var(--fonte);
+  color: var(--texto);
+  background: var(--fundo);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; display: block; }
+a { text-decoration: none; color: inherit; }
+:focus-visible { outline: 3px solid var(--vermelho); outline-offset: 3px; border-radius: 4px; }
+
+.container {
+  width: 100%;
+  max-width: var(--largura);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* 3. TOPO */
+.topo { background: var(--azul); position: relative; overflow: hidden; }
+
+.header { padding: 26px 0 0; position: relative; z-index: 10; }
+.header .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+.logo img { height: 54px; width: auto; }
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px 36px;
+  padding-bottom: 18px;
+}
+.nav a {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition: color .2s;
+}
+.nav a:hover, .nav a[aria-current="page"] { color: var(--branco); }
+.nav a[aria-current="page"] { box-shadow: 0 2px 0 var(--vermelho); }
+
+/* Barra fixa que aparece depois do scroll */
+.barra-fixa {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  background: var(--azul);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.18);
+  transform: translateY(-100%);
+  transition: transform .3s ease;
+}
+.barra-fixa.visivel { transform: translateY(0); }
+.barra-fixa .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.barra-fixa img { height: 36px; width: auto; }
+.barra-fixa .nav-compacta { display: flex; gap: 26px; }
+.barra-fixa .nav-compacta a {
+  color: rgba(255,255,255,.8);
+  font-size: 12.5px;
+  font-weight: 500;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+.barra-fixa .nav-compacta a:hover { color: var(--branco); }
+.barra-fixa .btn { padding: 10px 22px; font-size: 12.5px; }
+
+/* 4. BOTÕES */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 15px 32px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition: transform .2s, box-shadow .2s, background .2s;
+  border: 2px solid transparent;
+  cursor: pointer;
+}
+.btn svg { width: 18px; height: 18px; flex: none; }
+.btn-primario { background: var(--vermelho); color: var(--branco); }
+.btn-primario:hover {
+  background: var(--vermelho-escuro);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(227, 29, 43, 0.32);
+}
+
+/* 5. HERO */
+.hero {
+  color: var(--branco);
+  padding: 44px 0 84px;
+  position: relative;
+  text-align: center;
+}
+.hero::after {
+  content: "";
+  position: absolute;
+  right: -140px; top: -160px;
+  width: 460px; height: 460px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(227,29,43,.22), transparent 70%);
+  pointer-events: none;
+}
+.hero-conteudo { max-width: 860px; margin: 0 auto; position: relative; z-index: 2; }
+.slogan {
+  display: block;
+  font-size: 0.95rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--vermelho);
+  font-weight: 600;
+  margin-bottom: 18px;
+}
+.hero h1 {
+  font-size: clamp(1.75rem, 3.6vw, 2.9rem);
+  line-height: 1.15;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  margin-bottom: 20px;
+}
+.hero h1 span { color: var(--vermelho); }
+.hero .subtitulo {
+  font-size: 1.08rem;
+  color: rgba(255, 255, 255, 0.84);
+  margin: 0 auto 32px;
+  max-width: 640px;
+}
+
+/* Hero menor das páginas internas */
+.hero-interno { padding: 30px 0 64px; }
+.hero-interno h1 { font-size: clamp(1.8rem, 3.6vw, 2.6rem); }
+
+/* 6. SEÇÕES */
+.secao { padding: 68px 0; }
+.secao-branca { background: var(--branco); }
+.secao-cabeca { max-width: 680px; margin-bottom: 40px; }
+.secao-cabeca.centro { margin-left: auto; margin-right: auto; text-align: center; }
+.secao-rotulo {
+  display: block;
+  color: var(--vermelho);
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.secao-titulo {
+  font-size: clamp(1.7rem, 3.2vw, 2.4rem);
+  color: var(--azul);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin-bottom: 14px;
+}
+.secao-sub { color: var(--texto-suave); font-size: 1.02rem; }
+#avaliacoes-lista { display: flex; flex-direction: column; gap: 14px; flex: 1; }
+
+/* 13. CONTATO */
+#contato { position: relative; overflow: hidden; text-align: center; }
+#contato .container { position: relative; z-index: 1; }
+
+/* 14. RODAPÉ */
+.footer { background: var(--azul); color: rgba(255, 255, 255, 0.75); padding: 56px 0 28px; }
+.footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 48px; margin-bottom: 40px; }
+.footer h4 { color: var(--branco); font-size: 14px; margin-bottom: 16px; text-transform: uppercase; letter-spacing: .08em; }
+.footer p, .footer a { font-size: 14.5px; line-height: 1.9; display: block; }
+.footer a:hover { color: var(--branco); }
+.footer-logo { height: 44px; width: auto; margin-bottom: 16px; }
+.footer-base {
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+  padding-top: 24px;
+  font-size: 13px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* 15. BOTÃO FLUTUANTE DO WHATSAPP */
+.whats-flutuante {
+  position: fixed;
+  right: 20px; bottom: 20px;
+  z-index: 1100;
+  width: 60px; height: 60px;
+  border-radius: 50%;
+  background: var(--whats);
+  color: #fff;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 8px 24px rgba(0,0,0,.25);
+  transition: transform .2s;
+}
+.whats-flutuante:hover { transform: scale(1.07); }
+.whats-flutuante svg { width: 32px; height: 32px; }
+
+/* 16. PÁGINA DA CLÍNICA */
+.institucional { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+.institucional-texto p { color: var(--texto-suave); margin-bottom: 18px; font-size: 1.02rem; }
+.institucional-texto .destaque {
+  border-left: 4px solid var(--vermelho);
+  padding-left: 20px;
+  color: var(--azul);
+  font-weight: 500;
+}
+.institucional-imagem img { border-radius: var(--raio); box-shadow: var(--sombra); width: 100%; height: 480px; object-fit: cover; }
+.diferenciais { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+.diferencial { background: var(--branco); border-radius: var(--raio); padding: 26px; box-shadow: var(--sombra); }
+.diferencial h3 { color: var(--azul); font-size: 1.05rem; margin-bottom: 6px; }
+.diferencial p { color: var(--texto-suave); font-size: 14.5px; }
+.galeria { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.galeria figure { margin: 0; overflow: hidden; border-radius: 8px; position: relative; }
+.galeria img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; transition: transform .35s; }
+.galeria figure:hover img { transform: scale(1.04); }
+.galeria figcaption {
+  position: absolute; left: 0; right: 0; bottom: 0;
+  padding: 26px 14px 10px;
+  font-size: 13px; color: #fff; font-weight: 500;
+  background: linear-gradient(transparent, rgba(15,36,56,.75));
+}
+
+/* 17. RESPONSIVO */
+@media (max-width: 980px) {
+  #contato::before { background-position: right -220px center; opacity: .05; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .institucional { grid-template-columns: 1fr; gap: 40px; }
+  .diferenciais { grid-template-columns: 1fr; }
+  .barra-fixa .nav-compacta { display: none; }
+}
+@media (max-width: 640px) {
+  .header { padding: 20px 0 0; }
+  .logo img { height: 42px; }
+  .nav { gap: 8px 20px; }
+  .nav a { font-size: 11.5px; letter-spacing: 0.05em; }
+  .hero { padding: 28px 0 56px; }
+  .hero .subtitulo { font-size: 1rem; }
+  .secao { padding: 56px 0; }
+  .galeria { grid-template-columns: repeat(2, 1fr); }
+  .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+  .whats-flutuante { width: 54px; height: 54px; right: 16px; bottom: 16px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition: none !important; }
+}
+
+/* Contato: símbolo da marca como marca d'água ocupando a seção */
+#contato { padding: 88px 0; }
+#contato::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  /* símbolo grande, cortado na borda direita, sem passar por trás do texto */
+  background: url("imagens/logo-simbolo.png") right -340px center / auto 120% no-repeat;
+  opacity: 0.07;
+  pointer-events: none;
+}
+.horario-destaque {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  text-align: left;
+  background: var(--fundo);
+  border-left: 4px solid var(--vermelho);
+  border-radius: 12px;
+  padding: 18px 26px;
+  margin: 10px auto 26px;
+  max-width: 640px;
+}
+.horario-destaque > svg { width: 30px; height: 30px; color: var(--vermelho); flex: none; }
+.horario-rotulo { font-size: 12.5px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--vermelho); margin-bottom: 2px; }
+.horario-texto { color: var(--azul); font-size: 1.05rem; line-height: 1.5; }
+.horario-texto strong { font-weight: 700; }
+.contato-linha {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px 30px;
+  margin-bottom: 32px;
+}
+.contato-linha a { display: inline-flex; align-items: center; gap: 8px; color: var(--azul); font-weight: 600; font-size: 15px; }
+.contato-linha a:hover { color: var(--vermelho); }
+.contato-linha svg { width: 18px; height: 18px; color: var(--vermelho); }
+@media (max-width: 640px) {
+  #contato { padding: 60px 0; }
+  #contato::before { display: none; }
+  .horario-destaque { padding: 16px 18px; }
+  .contato-linha { flex-direction: column; align-items: center; }
+}
+
+  </style>
 </head>
 <body>
 
@@ -53,7 +382,7 @@
       <div class="container">
         <div class="hero-conteudo">
           <span class="slogan">A clínica</span>
-          <h1>Cuidar do movimento é <span>cuidar da vida</span></h1>
+          <h1>Do movimento à alimentação,<br> <span>um cuidado completo para você</span></h1>
           <p class="subtitulo">Conheça a história, o jeito de trabalhar e o espaço da TINAN, no Itaici 2, em Caldas Novas.</p>
         </div>
       </div>
@@ -125,12 +454,23 @@
   <!-- ===== CONTATO ===== -->
   <section class="secao secao-branca" id="contato">
     <div class="container">
-      <span class="secao-rotulo">Venha nos conhecer</span>
+      <span class="secao-rotulo">Contato</span>
       <h2 class="secao-titulo">Fale com nossos especialistas</h2>
-      <p class="contato-dados">
-        Rua 8, Quadra 32, Lote 4, Sala 3 — Itaici 2, Caldas Novas — GO<br>
-        Segunda a sexta, das 8h às 20h · Sábado, das 8h às 12h
+
+      <div class="horario-destaque">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        <div>
+          <p class="horario-rotulo">Horário de atendimento</p>
+          <p class="horario-texto">Atendemos de <strong>segunda a sexta, das 8h às 20h</strong>, e aos <strong>sábados, das 8h às 12h</strong>.</p>
+        </div>
+      </div>
+
+      <p class="contato-linha">
+        <a href="https://wa.me/5564992399515" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.3 7.4L3 21l2.1-5.6A8.5 8.5 0 1 1 21 11.5z"/></svg>(64) 99239-9515</a>
+        <a href="mailto:tinanfisioterapia@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>tinanfisioterapia@gmail.com</a>
+        <a href="https://instagram.com/tinanfisioterapia" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg>@tinanfisioterapia</a>
       </p>
+
       <a href="https://wa.me/5564992399515?text=Ol%C3%A1%2C%20venho%20atrav%C3%A9s%20do%20site%20e%20gostaria%20de%20marcar%20uma%20avalia%C3%A7%C3%A3o" class="btn btn-primario" target="_blank" rel="noopener">Agendar pelo WhatsApp</a>
     </div>
   </section>
