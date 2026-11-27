@@ -1,29 +1,29 @@
 <!DOCTYPE html>
 <html lang="pt-BR" data-theme="light">
-<head><script>if(location.pathname==="/2thllhknpt6s7ab5wan6j5cwpi")location.replace("/2thllhknpt6s7ab5wan6j5cwpi/"+location.search+location.hash)</script>
+<head>
 <meta charset="UTF-8">
+<script>document.documentElement.classList.add("js")</script>
+<link rel="icon" href="../imagens/logo-tinancirculo.png">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Perfil — Dr. Gustavo Crisóstomo | TINAN</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap">
-<link rel="stylesheet" href="shell.css">
-<script src="shell.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
 <style>
 :root {
---accent: #D51C24;
---accent-text: #B5151C;
+--accent: #E31D2B;
+--accent-text: #C2141F;
 --accent-contrast: #FFFFFF;
---navy: #1A3B5C;
+--navy: #15344F;
 --navy-deep: #0F2438;
---gray-light: #F4F6F8;
---graphite: #5A6B7B;
+--gray-light: #EEF1F4;
+--graphite: #4D5864;
 --divider: #E8ECEF;
 }
 *, *::before, *::after { box-sizing: border-box; }
 body {
 margin: 0;
-font-family: 'Montserrat', 'Poppins', 'Inter', system-ui, sans-serif;
+font-family: 'Inter', system-ui, sans-serif;
 color: var(--navy);
 background: #FFFFFF;
 -webkit-font-smoothing: antialiased;
@@ -71,7 +71,7 @@ min-height: 100vh;
 position: relative;
 display: flex;
 align-items: center;
-background: linear-gradient(135deg, #FFFFFF 0%, #FAFBFC 55%, #F4F6F8 100%);
+background: linear-gradient(135deg, #FFFFFF 0%, #FAFBFC 55%, #EEF1F4 100%);
 padding: 64px 24px;
 overflow: hidden;
 order: 2;
@@ -84,7 +84,7 @@ bottom: -140px;
 width: 420px;
 height: 420px;
 border-radius: 50%;
-background: #D51C24;
+background: #E31D2B;
 opacity: 0.03;
 pointer-events: none;
 }
@@ -95,7 +95,7 @@ left: 40px;
 top: 0;
 width: 1px;
 height: 60%;
-background: #D51C24;
+background: #E31D2B;
 opacity: 0.08;
 pointer-events: none;
 }
@@ -135,13 +135,13 @@ font-weight: 600;
 font-size: 15px;
 transition: background 0.2s ease, transform 0.2s ease;
 }
-.btn-cta:hover { background: #B5151C; transform: translateY(-1px); }
+.btn-cta:hover { background: #C2141F; transform: translateY(-1px); }
 .opening-cta { margin-top: 48px; }
 .opening-photo {
 position: relative;
 order: 1;
 aspect-ratio: 4 / 5;
-background-image: url('https://i.imgur.com/XyIgcWo.jpeg');
+background-image: url('../imagens/profissional-gustavo.jpg');
 background-size: cover;
 background-position: center top;
 background-repeat: no-repeat;
@@ -322,12 +322,12 @@ text-align: center;
 .footer-line + .footer-line { margin-top: 8px; }
 
 /* Fade in */
-.fade-in {
+.js .fade-in {
 opacity: 0;
 transform: translateY(24px);
 transition: opacity 0.8s ease, transform 0.8s ease;
 }
-.fade-in.is-visible { opacity: 1; transform: none; }
+.js .fade-in.is-visible { opacity: 1; transform: none; }
 
 /* Desktop */
 @media (min-width: 900px) {
@@ -355,14 +355,31 @@ mask-image: none;
 @media (prefers-reduced-motion: reduce) {
 .fade-in { transition: none; opacity: 1; transform: none; }
 }
+
+/* Cuidado integrado + Conheça também a equipe */
+.equipe-sec { background: #EEF1F4; padding: 88px 24px; }
+.equipe-inner { max-width: 1100px; margin: 0 auto; }
+.equipe-eyebrow { color: #E31D2B; font-size: 12px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; margin: 0 0 10px; }
+.equipe-titulo { color: #15344F; font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 800; letter-spacing: -.02em; margin: 0 0 14px; }
+.equipe-texto { color: #4D5864; font-size: 1rem; line-height: 1.7; max-width: 760px; margin: 0 0 36px; }
+.equipe-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+.equipe-card { background: #fff; border-radius: 14px; overflow: hidden; box-shadow: 0 4px 20px rgba(21,52,79,.08); text-decoration: none; display: flex; flex-direction: column; transition: transform .25s, box-shadow .25s; }
+.equipe-card:hover { transform: translateY(-5px); box-shadow: 0 16px 40px rgba(21,52,79,.16); }
+.equipe-card img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; object-position: center 18%; }
+.equipe-card div { padding: 18px 20px 22px; display: flex; flex-direction: column; flex: 1; }
+.equipe-card strong { color: #15344F; font-size: 1.05rem; }
+.equipe-card span { color: #4D5864; font-size: 14px; margin-top: 4px; }
+.equipe-card em { font-style: normal; color: #15344F; font-weight: 700; font-size: 14px; margin-top: auto; padding-top: 14px; }
+.equipe-card:hover em { color: #E31D2B; }
+@media (max-width: 760px) { .equipe-grid { grid-template-columns: 1fr; } .equipe-card { flex-direction: row; } .equipe-card img { width: 110px; aspect-ratio: auto; height: auto; } }
 </style>
 </head>
 <body>
 
 <header class="site-header">
 <div class="header-inner">
-<img class="header-logo" src="https://i.imgur.com/p0HLNiJ.png" alt="TINAN Centro de Fisioterapia & Saúde">
-<a class="back-link" href="/index.html">← Voltar para o site</a>
+<img class="header-logo" src="../imagens/logo-tinanbranco.png" alt="TINAN Centro de Fisioterapia & Saúde">
+<a class="back-link" href="../index.html">← Voltar para o site</a>
 </div>
 </header>
 
@@ -373,7 +390,7 @@ mask-image: none;
 <p class="eyebrow-label">Fisioterapia ortopédica e osteopatia</p>
 <h1 class="opening-title" id="opening-title">Cuidar vai muito além de tratar a dor: é compreender cada pessoa e devolver a ela a <span class="hl">liberdade de se movimentar.</span></h1>
 <p class="opening-name">Dr. Gustavo Crisóstomo</p>
-<p class="opening-role">Fisioterapeuta · CREFITO 433876-F</p>
+<p class="opening-role">Fisioterapeuta · CREFITO: 433876-F</p>
 <div class="opening-cta">
 <a class="btn-cta" href="https://wa.me/5564992399515?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20fisioterap%C3%AAutica%20com%20o%20Dr.%20Gustavo%20Cris%C3%B3stomo.">Agendar avaliação</a>
 </div>
@@ -425,8 +442,8 @@ mask-image: none;
 </article>
 <article class="treat-item fade-in">
 <p class="treat-num">05</p>
-<h3 class="treat-title">Terapias Manuais e Osteopatia</h3>
-<p class="treat-desc">Uso de terapias manuais e recursos da Osteopatia integrados a um raciocínio clínico individualizado.</p>
+<h3 class="treat-title">Terapias Manuais e Técnicas Osteopáticas</h3>
+<p class="treat-desc">Técnicas manuais e osteopáticas aplicadas como parte do tratamento fisioterapêutico, integradas a um raciocínio clínico individualizado.</p>
 </article>
 </div>
 </div>
@@ -500,15 +517,15 @@ mask-image: none;
 <hr class="contact-divider">
 <div class="contact-row fade-in">
 <a class="contact-link" href="https://wa.me/5564992399515?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20fisioterap%C3%AAutica%20com%20o%20Dr.%20Gustavo%20Cris%C3%B3stomo.">
-<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#D51C24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#E31D2B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
 WhatsApp (64) 99239-9515
 </a>
-<a class="contact-link" href="/cdn-cgi/l/email-protection#a3c0d1cad0ccd0d7ccceccc5cad0cacce3c4cec2cacf8dc0ccce">
-<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#D51C24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
-<span class="__cf_email__" data-cfemail="583b2a312b372b2c3735373e312b3137183f35393134763b3735">[email&#160;protected]</span>
+<a class="contact-link" href="mailto:tinanfisioterapia@gmail.com">
+<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#E31D2B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+tinanfisioterapia@gmail.com
 </a>
 <a class="contact-link" href="https://instagram.com/gusfisio" target="_blank" rel="noopener">
-<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#D51C24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><line x1="17.5" y1="6.5" x2="17.5" y2="6.5"/></svg>
+<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#E31D2B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><line x1="17.5" y1="6.5" x2="17.5" y2="6.5"/></svg>
 @gusfisio
 </a>
 </div>
@@ -524,13 +541,26 @@ WhatsApp (64) 99239-9515
 </section>
 </main>
 
+<section class="equipe-sec" aria-labelledby="equipe-title">
+<div class="equipe-inner">
+<p class="equipe-eyebrow">Cuidado integrado</p>
+<h2 class="equipe-titulo" id="equipe-title">Conheça também a equipe</h2>
+<p class="equipe-texto">Em lesões esportivas e pós-operatórios, o caso pode ser conduzido em conjunto com o Dr. André. A Dra. Derislainy complementa o tratamento com estratégias nutricionais voltadas à recuperação e ao desempenho.</p>
+<div class="equipe-grid">
+<a class="equipe-card" href="andre.html"><img src="../imagens/profissional-andre.jpg" alt="Dr. André Tinan" loading="lazy"><div><strong>Dr. André Tinan</strong><span>Fisioterapia traumato-ortopédica e desportiva</span><em>Ver perfil →</em></div></a>
+<a class="equipe-card" href="derislainy.html"><img src="../imagens/profissional-derislainy.jpg" alt="Dra. Derislainy Tinan" loading="lazy"><div><strong>Dra. Derislainy Tinan</strong><span>Nutrição clínica, materno-infantil e esportiva</span><em>Ver perfil →</em></div></a>
+<a class="equipe-card" href="anapaula.html"><img src="../imagens/profissional-ana.jpg" alt="Dra. Ana Paula Lopes" loading="lazy"><div><strong>Dra. Ana Paula Lopes</strong><span>Fisioterapia cardiorrespiratória</span><em>Ver perfil →</em></div></a>
+</div>
+</div>
+</section>
+
 <footer class="site-footer">
-<img class="footer-logo" src="https://i.imgur.com/9ZmHz7W.png" alt="Logo TINAN Centro de Fisioterapia & Saúde">
+<img class="footer-logo" src="../imagens/logo-tinanlateral.png" alt="Logo TINAN Centro de Fisioterapia & Saúde">
 <p class="footer-line">TINAN Centro de Fisioterapia &amp; Saúde · Rua 8, Quadra 32, Lote 4, Sala 3 — Itaici 2, Caldas Novas — GO</p>
 <p class="footer-line">© 2026 TINAN Centro de Fisioterapia &amp; Saúde</p>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 document.addEventListener('DOMContentLoaded', function () {
 var items = document.querySelectorAll('.fade-in');
 if (!('IntersectionObserver' in window)) {
@@ -548,6 +578,6 @@ observer.unobserve(entry.target);
 items.forEach(function (el) { observer.observe(el); });
 });
 </script>
-<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"7004b19d732d43b298810595cc4050b1","r":1,"spa":2}' crossorigin="anonymous"></script>
+
 </body>
 </html>

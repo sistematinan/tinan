@@ -3,576 +3,82 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TINAN — Centro de Fisioterapia & Saúde</title>
-  <meta name="description" content="TINAN Centro de Fisioterapia & Saúde em Caldas Novas (GO). Fisioterapia traumato-ortopédica e desportiva, cardiorrespiratória, ortopedia com osteopatia e nutrição clínica, materno-infantil e esportiva.">
+  <title>Fisioterapia em Caldas Novas: hérnia de disco, dor na coluna e lesões | TINAN</title>
+  <meta name="description" content="Fisioterapia em Caldas Novas (GO) para hérnia de disco, dor na coluna, lesões esportivas e pós-operatório, além de fisioterapia respiratória, técnicas osteopáticas e nutrição. Agende pelo WhatsApp.">
+  <link rel="canonical" href="https://tinan.com.br/">
   <link rel="icon" href="imagens/logo-tinancirculo.png">
+
+  <!-- Compartilhamento (WhatsApp, Instagram, Facebook) -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:title" content="TINAN — Centro de Fisioterapia &amp; Saúde em Caldas Novas">
+  <meta property="og:description" content="Fisioterapia, osteopatia e nutrição em um só lugar. Agende sua avaliação.">
+  <meta property="og:url" content="https://tinan.com.br/">
+  <meta property="og:image" content="https://tinan.com.br/imagens/fachada-clinica.jpeg">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-  <style>
-    /* ============================================================
-       1. VARIÁVEIS DA MARCA
-       ============================================================ */
-    :root {
-      --azul:        #15344F;
-      --azul-medio:  #26445E;
-      --vermelho:    #E31D2B;
-      --fundo:       #F7F8FA;
-      --branco:      #FFFFFF;
-      --texto:       #2B2B2B;
-      --texto-suave: #5A6672;
-      --borda:       #E3E7EC;
-      --fonte: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      --largura: 1180px;
-      --raio: 14px;
-      --sombra: 0 4px 20px rgba(21, 52, 79, 0.08);
-    }
-
-    /* ============================================================
-       2. RESET E BASE
-       ============================================================ */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      font-family: var(--fonte);
-      color: var(--texto);
-      background: var(--fundo);
-      line-height: 1.65;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    img { max-width: 100%; display: block; }
-    a { text-decoration: none; color: inherit; }
-
-    .container {
-      width: 100%;
-      max-width: var(--largura);
-      margin: 0 auto;
-      padding: 0 24px;
-    }
-
-    /* ============================================================
-       3. TOPO — header + hero num único bloco azul contínuo
-       ============================================================ */
-    .topo {
-      background: var(--azul);
-      position: relative;
-    }
-
-    .header {
-      background: var(--azul);
-      padding: 30px 0 0;
-      position: relative;
-      z-index: 10;
-      transition: padding .35s ease;
-    }
-
-    .header .container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 18px;
-      transition: gap .35s ease;
-    }
-
-    .logo { display: block; }
-
-    .logo img {
-      height: 54px;
-      width: auto;
-      transition: height .35s ease;
-    }
-
-    .nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      width: 100%;
-      max-width: 820px;
-      gap: 16px;
-      overflow: hidden;
-      max-height: 60px;
-      opacity: 1;
-      padding-bottom: 22px;
-      transition: max-height .35s ease, opacity .25s ease, padding .35s ease;
-    }
-
-    .nav a {
-      color: rgba(255, 255, 255, 0.8);
-      font-size: 13.5px;
-      font-weight: 500;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      white-space: nowrap;
-      transition: color .2s;
-    }
-
-    .nav a:hover { color: var(--vermelho); }
-
-    /* Barra fixa que aparece só depois do scroll */
-    .barra-fixa {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 1000;
-      background: var(--azul);
-      padding: 12px 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.18);
-      transform: translateY(-100%);
-      transition: transform .3s ease;
-    }
-
-    .barra-fixa.visivel { transform: translateY(0); }
-
-    .barra-fixa img { height: 40px; width: auto; }
-
-    /* ============================================================
-       4. BOTÕES
-       ============================================================ */
-    .btn {
-      display: inline-block;
-      padding: 14px 34px;
-      border-radius: 999px;
-      font-weight: 600;
-      font-size: 14px;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      transition: transform .2s, box-shadow .2s;
-      border: none;
-      cursor: pointer;
-    }
-
-    .btn-primario { background: var(--vermelho); color: var(--branco); }
-
-    .btn-primario:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(227, 29, 43, 0.32);
-    }
-
-    /* ============================================================
-       5. HERO — mesmo azul, sem emenda
-       ============================================================ */
-    .pagina-home .hero {
-      background: var(--azul);
-      color: var(--branco);
-      padding: 40px 0 88px;
-      position: relative;
-      overflow: hidden;
-      text-align: center;
-    }
-
-    .pagina-home .hero::after {
-      content: "";
-      position: absolute;
-      right: -120px;
-      top: -120px;
-      width: 420px;
-      height: 420px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(227,29,43,.22), transparent 70%);
-    }
-
-    .pagina-home .hero-conteudo {
-      max-width: 1000px;
-      margin: 0 auto;
-      position: relative;
-      z-index: 2;
-    }
-
-    .pagina-home .slogan {
-      display: block;
-      font-size: clamp(0.95rem, 1.6vw, 1.1rem);
-      font-weight: 400;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--vermelho);
-      margin-bottom: 22px;
-    }
-
-    .pagina-home .hero h1 {
-      font-size: clamp(1.6rem, 3.6vw, 2.9rem);
-      line-height: 1.15;
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      margin-bottom: 20px;
-      white-space: nowrap;
-    }
-
-    .pagina-home .hero h1 span { color: var(--vermelho); }
-
-    .pagina-home .hero .subtitulo {
-      font-size: 1.05rem;
-      color: rgba(255, 255, 255, 0.82);
-      margin: 0 auto 34px;
-      max-width: 660px;
-    }
-
-    /* ============================================================
-       6. SEÇÕES
-       ============================================================ */
-    .secao { padding: 88px 0; }
-
-    .secao-titulo {
-      font-size: clamp(1.7rem, 3.2vw, 2.4rem);
-      color: var(--azul);
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      margin-bottom: 16px;
-    }
-
-    .secao-sub {
-      color: var(--texto-suave);
-      font-size: 1.02rem;
-      max-width: 640px;
-      margin-bottom: 44px;
-    }
-
-    .institucional {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 64px;
-      align-items: center;
-    }
-
-    .institucional-texto p {
-      color: var(--texto-suave);
-      margin-bottom: 18px;
-      font-size: 1.02rem;
-    }
-
-    .institucional-texto .destaque {
-      border-left: 4px solid var(--vermelho);
-      padding-left: 20px;
-      color: var(--azul);
-      font-weight: 500;
-    }
-
-    .institucional-imagem img {
-      border-radius: var(--raio);
-      box-shadow: var(--sombra);
-      width: 100%;
-      height: 440px;
-      object-fit: cover;
-    }
-
-    /* ============================================================
-       7. GALERIA — grid estilo feed do Instagram
-       ============================================================ */
-    .galeria {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 8px;
-    }
-
-    .galeria img {
-      width: 100%;
-      aspect-ratio: 1 / 1;
-      object-fit: cover;
-      border-radius: 6px;
-      transition: transform .3s, opacity .3s;
-      cursor: pointer;
-    }
-
-    .galeria img:hover {
-      transform: scale(1.02);
-      opacity: 0.92;
-    }
-
-    /* ============================================================
-       8. CARDS DOS PROFISSIONAIS
-       ============================================================ */
-    .cards-profissionais {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 24px;
-    }
-
-    .card-profissional {
-      background: var(--branco);
-      border-radius: var(--raio);
-      overflow: hidden;
-      box-shadow: var(--sombra);
-      transition: transform .25s, box-shadow .25s;
-      display: block;
-    }
-
-    .card-profissional:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 16px 40px rgba(21, 52, 79, 0.16);
-    }
-
-    .card-profissional img {
-      width: 100%;
-      aspect-ratio: 4 / 5;
-      object-fit: cover;
-      object-position: center top;
-    }
-
-    .card-profissional-info { padding: 22px 20px 26px; }
-
-    .card-profissional-info h3 {
-      color: var(--azul);
-      font-size: 1.12rem;
-      font-weight: 700;
-      margin-bottom: 6px;
-    }
-
-    .card-profissional-info .especialidade {
-      color: var(--vermelho);
-      font-size: 12.5px;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: .06em;
-      margin-bottom: 6px;
-    }
-
-    .card-profissional-info .registro {
-      color: var(--texto-suave);
-      font-size: 12.5px;
-      margin-bottom: 10px;
-    }
-
-    .card-profissional-info .area {
-      color: var(--azul-medio);
-      font-size: 13.5px;
-      line-height: 1.5;
-      margin-bottom: 14px;
-      min-height: 40px;
-    }
-
-    .card-profissional-info .ver-perfil {
-      color: var(--azul-medio);
-      font-size: 14px;
-      font-weight: 600;
-    }
-
-    /* ============================================================
-       9. MAPA E AVALIAÇÕES — alturas simétricas
-       ============================================================ */
-    .mapa-avaliacoes {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 40px;
-      align-items: stretch;
-    }
-
-    .mapa-bloco {
-      border-radius: var(--raio);
-      overflow: hidden;
-      box-shadow: var(--sombra);
-      background: var(--branco);
-      display: flex;
-      height: 100%;
-      min-height: 420px;
-    }
-
-    .mapa-bloco iframe {
-      width: 100%;
-      height: 100%;
-      min-height: 420px;
-      border: 0;
-      display: block;
-      flex: 1;
-    }
-
-    .avaliacoes-bloco {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-      height: 100%;
-    }
-
-    .avaliacoes-cabecalho {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 4px;
-    }
-
-    .avaliacoes-nota {
-      font-size: 2rem;
-      font-weight: 800;
-      color: var(--azul);
-      line-height: 1;
-    }
-
-    .avaliacoes-estrelas {
-      color: #F5A623;
-      font-size: 1.05rem;
-      letter-spacing: 2px;
-    }
-
-    .avaliacoes-total {
-      color: var(--texto-suave);
-      font-size: 13px;
-    }
-
-    /* Container dos cards dinâmicos */
-    #avaliacoes-lista {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-      flex: 1;
-    }
-
-    .avaliacao-card {
-      background: var(--branco);
-      border-radius: var(--raio);
-      padding: 20px 22px;
-      box-shadow: var(--sombra);
-      border-left: 3px solid var(--vermelho);
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
-    .avaliacao-card .autor {
-      font-weight: 700;
-      color: var(--azul);
-      font-size: 14px;
-      margin-bottom: 4px;
-    }
-
-    .avaliacao-card .estrelas {
-      color: #F5A623;
-      font-size: 13px;
-      letter-spacing: 1px;
-      margin-bottom: 8px;
-    }
-
-    .avaliacao-card .texto {
-      color: var(--texto-suave);
-      font-size: 14px;
-      line-height: 1.6;
-    }
-
-    .avaliacao-card .quando {
-      color: #9AA5B1;
-      font-size: 12px;
-      margin-top: 8px;
-    }
-
-    .avaliacoes-link {
-      color: var(--azul-medio);
-      font-weight: 600;
-      font-size: 14px;
-      margin-top: 4px;
-    }
-
-    .avaliacoes-link:hover { color: var(--vermelho); }
-
-    /* ============================================================
-       10. CONTATO
-       ============================================================ */
-    .contato-dados {
-      color: var(--texto-suave);
-      font-size: 1.02rem;
-      line-height: 2;
-      margin-bottom: 32px;
-    }
-
-    /* ============================================================
-       11. RODAPÉ
-       ============================================================ */
-    .footer {
-      background: var(--azul);
-      color: rgba(255, 255, 255, 0.75);
-      padding: 56px 0 28px;
-      margin-top: 80px;
-    }
-
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 1.4fr 1fr 1fr;
-      gap: 48px;
-      margin-bottom: 40px;
-    }
-
-    .footer h4 {
-      color: var(--branco);
-      font-size: 14px;
-      margin-bottom: 16px;
-      text-transform: uppercase;
-      letter-spacing: .08em;
-    }
-
-    .footer p, .footer a {
-      font-size: 14.5px;
-      line-height: 1.9;
-      display: block;
-    }
-
-    .footer a:hover { color: var(--vermelho); }
-
-    .footer-logo { height: 44px; width: auto; margin-bottom: 16px; }
-
-    .footer-base {
-      border-top: 1px solid rgba(255, 255, 255, 0.14);
-      padding-top: 24px;
-      font-size: 13px;
-      text-align: center;
-      color: rgba(255, 255, 255, 0.5);
-    }
-
-    /* ============================================================
-       12. RESPONSIVO
-       ============================================================ */
-    @media (max-width: 980px) {
-      .cards-profissionais { grid-template-columns: repeat(2, 1fr); }
-      .institucional { grid-template-columns: 1fr; gap: 40px; }
-      .mapa-avaliacoes { grid-template-columns: 1fr; }
-      .mapa-bloco { min-height: 320px; }
-      .mapa-bloco iframe { min-height: 320px; }
-      .footer-grid { grid-template-columns: 1fr 1fr; }
-      .pagina-home .hero h1 { white-space: normal; }
-    }
-
-    @media (max-width: 640px) {
-      .header { padding: 20px 0 0; }
-      .logo img { height: 40px; }
-      .nav { flex-wrap: wrap; justify-content: center; gap: 12px 20px; max-height: 90px; padding-bottom: 18px; }
-      .nav a { font-size: 11.5px; letter-spacing: 0.05em; }
-      .cards-profissionais { grid-template-columns: 1fr; }
-      .galeria { grid-template-columns: repeat(2, 1fr); }
-      .footer-grid { grid-template-columns: 1fr; gap: 32px; }
-      .secao { padding: 60px 0; }
-      .pagina-home .hero { padding: 32px 0 60px; }
-      .pagina-home .hero h1 { font-size: 1.75rem; }
-      .mapa-bloco { min-height: 280px; }
-      .mapa-bloco iframe { min-height: 280px; }
-    }
-  </style>
+  <link rel="stylesheet" href="css/site.css">
+
+  <!-- Dados estruturados: ajudam o Google a mostrar a clínica na busca local -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MedicalClinic",
+    "name": "TINAN — Centro de Fisioterapia & Saúde",
+    "url": "https://tinan.com.br/",
+    "image": "https://tinan.com.br/imagens/fachada-clinica.jpeg",
+    "logo": "https://tinan.com.br/imagens/logo-tinancirculo.png",
+    "telephone": "+55-64-99239-9515",
+    "email": "tinanfisioterapia@gmail.com",
+    "medicalSpecialty": ["PhysicalTherapy", "Musculoskeletal", "Pulmonary", "DietNutrition", "SportsMedicine"],
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Rua 8, Quadra 32, Lote 4, Sala 3 — Itaici 2",
+      "addressLocality": "Caldas Novas",
+      "addressRegion": "GO",
+      "addressCountry": "BR"
+    },
+    "geo": { "@type": "GeoCoordinates", "latitude": -17.76178, "longitude": -48.61947 },
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "08:00", "closes": "20:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "08:00", "closes": "12:00" }
+    ],
+    "sameAs": ["https://instagram.com/tinanfisioterapia"]
+  }
+  </script>
 </head>
-<body class="pagina-home">
+<body>
 
-  <!-- Barra fixa: aparece só depois do scroll -->
+  <!-- Barra fixa: aparece depois do scroll -->
   <div class="barra-fixa" id="barraFixa">
-    <a href="index.html" aria-label="Voltar para a home">
-      <img src="imagens/logo-tinanbranco.png" alt="TINAN">
-    </a>
+    <div class="container">
+      <a href="index.html" aria-label="Voltar para o início">
+        <img src="imagens/logo-tinanbranco.png" alt="TINAN">
+      </a>
+      <nav class="nav-compacta" aria-label="Navegação rápida">
+        <a href="#especialidades">Especialidades</a>
+        <a href="#profissionais">Profissionais</a>
+        <a href="clinica.html">A clínica</a>
+        <a href="#avaliacoes">Avaliações</a>
+      </nav>
+      <a href="https://wa.me/5564992399515?text=Ol%C3%A1%2C%20venho%20atrav%C3%A9s%20do%20site%20e%20gostaria%20de%20marcar%20uma%20avalia%C3%A7%C3%A3o" class="btn btn-primario" target="_blank" rel="noopener">Agendar</a>
+    </div>
   </div>
 
-  <!-- ===== TOPO: header + hero no mesmo bloco azul ===== -->
+  <!-- ===== TOPO ===== -->
   <div class="topo">
-
     <header class="header">
       <div class="container">
-        <a href="index.html" class="logo" aria-label="Voltar para a home">
-          <img src="imagens/logo-tinanbranco.png" alt="TINAN — Centro de Fisioterapia & Saúde">
+        <a href="index.html" class="logo" aria-label="Voltar para o início">
+          <img src="imagens/logo-tinanbranco.png" alt="TINAN — Centro de Fisioterapia &amp; Saúde">
         </a>
-        <nav class="nav">
-          <a href="#sobre">Sobre</a>
-          <a href="#estrutura">Nossa estrutura</a>
+        <nav class="nav" aria-label="Navegação principal">
+          <a href="#especialidades">Especialidades</a>
           <a href="#profissionais">Profissionais</a>
-          <a href="#localizacao">Onde estamos</a>
+          <a href="clinica.html">A clínica</a>
+          <a href="#avaliacoes">Avaliações</a>
           <a href="#contato">Contato</a>
         </nav>
       </div>
@@ -584,94 +90,119 @@
           <span class="slogan">Você de volta ao jogo</span>
           <h1>Cuidar do movimento é <span>cuidar da vida</span></h1>
           <p class="subtitulo">Fisioterapia e saúde integrada em Caldas Novas, com atendimento humanizado e estrutura pensada para a sua recuperação.</p>
-          <a href="https://wa.me/5564992399515?text=Ol%C3%A1%2C%20venho%20atrav%C3%A9s%20do%20site%20e%20gostaria%20de%20marcar%20uma%20avalia%C3%A7%C3%A3o" class="btn btn-primario">Agende sua avaliação</a>
+          <a href="https://wa.me/5564992399515?text=Ol%C3%A1%2C%20venho%20atrav%C3%A9s%20do%20site%20e%20gostaria%20de%20marcar%20uma%20avalia%C3%A7%C3%A3o" class="btn btn-primario" target="_blank" rel="noopener">Agende sua avaliação</a>
+          <p class="hero-confianca-simples">
+            <span class="estrelas" aria-hidden="true">★★★★★</span><strong id="hero-nota">5,0</strong> no Google
+            <span class="sep">·</span>Seg. a sex., 8h às 20h · Sáb., 8h às 12h
+          </p>
         </div>
       </div>
     </section>
-
   </div>
 
-  <!-- ===== INSTITUCIONAL ===== -->
-  <section class="secao" id="sobre">
+  <!-- ===== ESPECIALIDADES ===== -->
+  <section class="secao" id="especialidades">
     <div class="container">
-      <div class="institucional">
-        <div class="institucional-texto">
-          <h2 class="secao-titulo">Sobre a TINAN</h2>
-          <p class="destaque">Acreditamos que cada corpo tem sua própria história — e merece um cuidado que respeite esse tempo.</p>
-          <p>A TINAN nasceu em Caldas Novas com uma ideia simples: reunir, num só lugar, profissionais que tratam pessoas e não apenas diagnósticos. Somos um centro de fisioterapia e saúde com atendimento em fisioterapia traumato-ortopédica e desportiva, fisioterapia cardiorrespiratória, ortopedia com osteopatia e nutrição clínica, materno-infantil e esportiva.</p>
-          <p>Nossa estrutura foi pensada para que o paciente se sinta acolhido desde a chegada: salas equipadas, ambiente tranquilo e uma equipe que conversa entre si. Aqui, o fisioterapeuta sabe o que o nutricionista está acompanhando, e o cuidado não se perde entre uma especialidade e outra.</p>
-          <p>Trabalhamos com avaliação criteriosa, plano de tratamento explicado com clareza e acompanhamento próximo. Cada pessoa chega com uma história diferente, e é a partir dela que construímos o caminho de recuperação.</p>
-        </div>
-        <div class="institucional-imagem">
-          <img src="imagens/fachada-clinica.jpeg" alt="Fachada da clínica TINAN">
-        </div>
+      <div class="secao-cabeca centro">
+        <span class="secao-rotulo">Especialidades</span>
+        <h2 class="secao-titulo">Como podemos te ajudar</h2>
+        <p class="secao-sub">Hérnia de disco, dor na coluna, lesões, pós-operatório, problemas respiratórios ou alimentação: veja qual especialidade é indicada para o seu caso.</p>
       </div>
-    </div>
-  </section>
-
-  <!-- ===== NOSSA ESTRUTURA ===== -->
-  <section class="secao" id="estrutura" style="background: var(--branco);">
-    <div class="container">
-      <h2 class="secao-titulo">Nossa estrutura</h2>
-      <p class="secao-sub">Ambientes preparados para acolher, tratar e recuperar — com equipamentos e espaços pensados para o seu conforto.</p>
-      <div class="galeria">
-        <img src="imagens/ambiente-recepcao.jpeg" alt="Recepção da clínica">
-        <img src="imagens/ambiente-01.jpeg" alt="Sala de atendimento">
-        <img src="imagens/estrutura-01.jpeg" alt="Equipamentos de reabilitação">
-        <img src="imagens/estrutura-02.jpeg" alt="Sala de atendimento com identidade da marca">
-        <img src="imagens/atendimento-01.jpeg" alt="Atendimento fisioterapêutico">
-        <img src="imagens/fachada-clinica.jpeg" alt="Fachada da clínica">
+      <div class="areas especialidades">
+        <article class="area-card">
+          <div class="area-icone"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="12" y="3" width="8" height="5" rx="2"/><rect x="11.5" y="10" width="9" height="5" rx="2"/><rect x="11" y="17" width="10" height="5" rx="2"/><rect x="10.5" y="24" width="11" height="5" rx="2"/></svg></div>
+          <h3>Fisioterapia Traumato-Ortopédica</h3>
+          <p>Avalia e trata dores, lesões e limitações de músculos, articulações e coluna, incluindo a reabilitação após cirurgias ortopédicas.</p>
+          <p class="area-indicada">Indicada para</p>
+          <ul class="area-tags"><li>Hérnia de disco</li><li>Dor na coluna</li><li>Dor lombar e cervical</li><li>Dor ciática</li><li>Bico de papagaio (artrose)</li><li>Tendinites e bursites</li><li>Dor no ombro, quadril e joelho</li><li>Pós-operatório ortopédico</li></ul>
+          <p class="area-com">Com <a href="profissionais/andre.html">Dr. André Tinan</a> e <a href="profissionais/gustavo.html">Dr. Gustavo Crisóstomo&nbsp;→</a></p>
+        </article>
+        <article class="area-card">
+          <div class="area-icone"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 18V9a2 2 0 0 1 4 0v7"/><path d="M11 15V6a2 2 0 0 1 4 0v9"/><path d="M15 15V7a2 2 0 0 1 4 0v9"/><path d="M19 16v-5a2 2 0 0 1 4 0v8c0 5-3.5 9-8.5 9h-1C10 28 7 25 7 21v-3"/></svg></div>
+          <h3>Terapias Manuais e Técnicas Osteopáticas</h3>
+          <p>Técnicas manuais e osteopáticas aplicadas como parte do tratamento fisioterapêutico, para melhorar a mobilidade e reduzir a dor.</p>
+          <p class="area-indicada">Indicada para</p>
+          <ul class="area-tags"><li>Dor nas costas e no pescoço</li><li>Torcicolo</li><li>Restrições de movimento</li><li>Dores articulares</li><li>Tensões musculares</li></ul>
+          <p class="area-com">Com <a href="profissionais/gustavo.html">Dr. Gustavo Crisóstomo&nbsp;→</a></p>
+        </article>
+        <article class="area-card">
+          <div class="area-icone"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="19" cy="5" r="2.5"/><path d="M8 13l5-4 5 2 3 5 4 1"/><path d="M13 9l-2 8 5 3-2 8"/><path d="M11 17l-5 5"/></svg></div>
+          <h3>Fisioterapia Desportiva</h3>
+          <p>Reabilitação voltada a quem pratica esporte: tratamento da lesão, critérios claros e retorno progressivo e seguro aos treinos e competições.</p>
+          <p class="area-indicada">Indicada para</p>
+          <ul class="area-tags"><li>Lesões esportivas</li><li>Reconstrução de LCA</li><li>Lesões musculares</li><li>Entorses</li><li>Retorno ao esporte</li></ul>
+          <p class="area-com">Com <a href="profissionais/andre.html">Dr. André Tinan&nbsp;→</a></p>
+        </article>
+        <article class="area-card">
+          <div class="area-icone"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 4v11"/><path d="M16 12c-2 0-3-2-5-2-3 0-5 6-5 11 0 4 2 6 4 6 3 0 6-2 6-6"/><path d="M16 12c2 0 3-2 5-2 3 0 5 6 5 11 0 4-2 6-4 6-3 0-6-2-6-6"/></svg></div>
+          <h3>Fisioterapia Cardiorrespiratória</h3>
+          <p>Melhora a função respiratória e a capacidade física em todas as idades, do bebê ao idoso.</p>
+          <p class="area-indicada">Indicada para</p>
+          <ul class="area-tags"><li>Asma</li><li>Bronquiolite</li><li>Pneumonia</li><li>DPOC</li><li>Pós-cirurgia cardíaca</li><li>Fraqueza respiratória no idoso</li></ul>
+          <p class="area-com">Com <a href="profissionais/anapaula.html">Dra. Ana Paula Lopes&nbsp;→</a></p>
+        </article>
+        <article class="area-card">
+          <div class="area-icone"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 10c-2-3-8-3-9 2-1 6 3 15 6 15 1.5 0 2-1 3-1s1.5 1 3 1c3 0 7-9 6-15-1-5-7-5-9-2z"/><path d="M16 10c0-3 1-5 4-6"/></svg></div>
+          <h3>Nutrição Clínica, Materno-Infantil e Esportiva</h3>
+          <p>Plano alimentar construído a partir da sua rotina, em cada fase da vida, e integrado à reabilitação e ao esporte.</p>
+          <p class="area-indicada">Indicada para</p>
+          <ul class="area-tags"><li>Gestação e pós-parto</li><li>Introdução alimentar</li><li>Seletividade alimentar infantil</li><li>Emagrecimento</li><li>Recuperação de lesões</li><li>Desempenho esportivo</li></ul>
+          <p class="area-com">Com <a href="profissionais/derislainy.html">Dra. Derislainy Tinan&nbsp;→</a></p>
+        </article>
       </div>
     </div>
   </section>
 
   <!-- ===== PROFISSIONAIS ===== -->
-  <section class="secao" id="profissionais">
+  <section class="secao secao-branca" id="profissionais">
     <div class="container">
-      <h2 class="secao-titulo">Nossos profissionais</h2>
-      <p class="secao-sub">Uma equipe multidisciplinar dedicada a entender o seu caso e construir o melhor caminho de recuperação.</p>
+      <div class="secao-cabeca">
+        <span class="secao-rotulo">Equipe</span>
+        <h2 class="secao-titulo">Nossos profissionais</h2>
+        <p class="secao-sub">Uma equipe multidisciplinar que conversa entre si para construir o melhor caminho para a sua recuperação.</p>
+      </div>
       <div class="cards-profissionais">
 
         <a href="profissionais/andre.html" class="card-profissional">
-          <img src="imagens/profissional-andre.png" alt="Dr. André Luís Tinan Costa">
+          <div class="card-foto"><img src="imagens/profissional-andre.jpg" alt="Dr. André Luís Tinan Costa, fisioterapeuta" loading="lazy" width="900" height="985"></div>
           <div class="card-profissional-info">
-            <h3>Dr. André Luís Tinan Costa</h3>
             <p class="especialidade">Fisioterapeuta</p>
-            <p class="registro">CREFITO 395766-F</p>
-            <p class="area">Fisioterapia Traumato-Ortopédica e Desportiva</p>
+            <h3>Dr. André Tinan</h3>
+            <p class="area">Traumato-ortopédica e desportiva</p>
+            <p class="registro">CREFITO: 395766-F</p>
             <span class="ver-perfil">Ver perfil →</span>
           </div>
         </a>
 
         <a href="profissionais/derislainy.html" class="card-profissional">
-          <img src="imagens/profissional-derislainy.png" alt="Dra. Derislainy Tinan">
+          <div class="card-foto"><img src="imagens/profissional-derislainy.jpg" alt="Dra. Derislainy Tinan, nutricionista" loading="lazy" width="900" height="985"></div>
           <div class="card-profissional-info">
-            <h3>Dra. Derislainy Tinan</h3>
             <p class="especialidade">Nutricionista</p>
-            <p class="registro">CRN 26281-P</p>
-            <p class="area">Nutrição Clínica, Materno-Infantil e Esportiva</p>
+            <h3>Dra. Derislainy Tinan</h3>
+            <p class="area">Nutrição clínica, materno-infantil e esportiva</p>
+            <p class="registro">CRN: 26281-P</p>
             <span class="ver-perfil">Ver perfil →</span>
           </div>
         </a>
 
-        <a href="profissionais/ana.html" class="card-profissional">
-          <img src="imagens/profissional-ana.jpeg" alt="Dra. Ana Paula Moreira Gomes Lopes">
+        <a href="profissionais/anapaula.html" class="card-profissional">
+          <div class="card-foto"><img src="imagens/profissional-ana.jpg" alt="Dra. Ana Paula Moreira Gomes Lopes, fisioterapeuta" loading="lazy" width="900" height="1351"></div>
           <div class="card-profissional-info">
-            <h3>Dra. Ana Paula Moreira Gomes Lopes</h3>
             <p class="especialidade">Fisioterapeuta</p>
-            <p class="registro">CREFITO 370442-F</p>
-            <p class="area">Fisioterapia Cardiorrespiratória</p>
+            <h3>Dra. Ana Paula Lopes</h3>
+            <p class="area">Fisioterapia cardiorrespiratória</p>
+            <p class="registro">CREFITO: 370442-F</p>
             <span class="ver-perfil">Ver perfil →</span>
           </div>
         </a>
 
         <a href="profissionais/gustavo.html" class="card-profissional">
-          <img src="imagens/profissional-gustavo.jpeg" alt="Dr. Gustavo Crisóstomo">
+          <div class="card-foto"><img src="imagens/profissional-gustavo.jpg" alt="Dr. Gustavo Crisóstomo, fisioterapeuta" loading="lazy" width="900" height="1350"></div>
           <div class="card-profissional-info">
-            <h3>Dr. Gustavo Crisóstomo</h3>
             <p class="especialidade">Fisioterapeuta</p>
-            <p class="registro">CREFITO 433876-F</p>
-            <p class="area">Fisioterapia Ortopédica e Osteopatia</p>
+            <h3>Dr. Gustavo Crisóstomo</h3>
+            <p class="area">Fisioterapia ortopédica e osteopatia</p>
+            <p class="registro">CREFITO: 433876-F</p>
             <span class="ver-perfil">Ver perfil →</span>
           </div>
         </a>
@@ -680,54 +211,97 @@
     </div>
   </section>
 
-  <!-- ===== MAPA E AVALIAÇÕES ===== -->
-  <section class="secao" id="localizacao" style="background: var(--branco);">
+  <!-- ===== CONHEÇA A CLÍNICA (leva à subpágina) ===== -->
+  <section class="secao">
     <div class="container">
-      <h2 class="secao-titulo">Onde estamos</h2>
-      <p class="secao-sub">Venha nos visitar ou veja o que nossos pacientes dizem sobre o atendimento.</p>
+      <div class="faixa-clinica">
+        <div class="faixa-clinica-fotos">
+          <img src="imagens/ambiente-recepcao.jpeg" alt="Recepção da TINAN" loading="lazy">
+          <img src="imagens/ambiente-01.jpeg" alt="Área de atendimento e reabilitação" loading="lazy">
+        </div>
+        <div class="faixa-clinica-texto">
+          <span class="secao-rotulo">A clínica</span>
+          <h2 class="secao-titulo">Um espaço pensado para a sua recuperação</h2>
+          <p>Salas equipadas, ambiente tranquilo e uma equipe que trabalha em conjunto. Conheça a nossa história e a nossa estrutura.</p>
+          <a href="clinica.html" class="btn btn-contorno">Conhecer a clínica →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== AVALIAÇÕES E MAPA ===== -->
+  <section class="secao secao-branca" id="avaliacoes">
+    <div class="container">
+      <div class="secao-cabeca">
+        <span class="secao-rotulo">Quem já passou por aqui</span>
+        <h2 class="secao-titulo">Avaliações e localização</h2>
+        <p class="secao-sub">Veja o que nossos pacientes dizem no Google e como chegar à clínica, no Itaici 2, em Caldas Novas.</p>
+      </div>
 
       <div class="mapa-avaliacoes">
-
-        <div class="mapa-bloco">
-         <iframe
-    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3799.636031656362!2d-48.61947021238209!3d-17.761780739849282!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94a731a16f3f2cc5%3A0x47adfd489bf20e6e!2sTinan%20-%20Centro%20de%20Fisioterapia%20e%20Sa%C3%BAde!5e0!3m2!1spt-BR!2sbr!4v1794061381194!5m2!1spt-BR!2sbr"
-    loading="lazy"
-    referrerpolicy="strict-origin-when-cross-origin"
-    title="Localização da TINAN no Google Maps">
-         </iframe>
-        </div>
-
         <div class="avaliacoes-bloco">
           <div class="avaliacoes-cabecalho">
             <span class="avaliacoes-nota" id="avaliacoes-nota">5,0</span>
             <div>
-              <div class="avaliacoes-estrelas">★★★★★</div>
+              <div class="avaliacoes-estrelas" aria-hidden="true">★★★★★</div>
               <div class="avaliacoes-total" id="avaliacoes-total">Avaliações no Google</div>
             </div>
           </div>
-
           <div id="avaliacoes-lista"></div>
-
-          <a href="https://www.google.com/maps/place/?q=place_id:ChIJxSw_b6Exp5QRbg7ym0j9rUc"
-             target="_blank" rel="noopener" class="avaliacoes-link">
-            Ver todas as avaliações no Google →
-          </a>
+          <a href="https://www.google.com/maps/place/?q=place_id:ChIJxSw_b6Exp5QRbg7ym0j9rUc" target="_blank" rel="noopener" class="avaliacoes-link">Ver todas as avaliações no Google →</a>
         </div>
 
+        <div class="mapa-bloco">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3799.636031656362!2d-48.61947021238209!3d-17.761780739849282!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94a731a16f3f2cc5%3A0x47adfd489bf20e6e!2sTinan%20-%20Centro%20de%20Fisioterapia%20e%20Sa%C3%BAde!5e0!3m2!1spt-BR!2sbr!4v1794061381194!5m2!1spt-BR!2sbr"
+            loading="lazy"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+            title="Localização da TINAN no Google Maps"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PERGUNTAS FREQUENTES ===== -->
+  <section class="secao" id="duvidas">
+    <div class="container">
+      <div class="secao-cabeca centro">
+        <span class="secao-rotulo">Dúvidas frequentes</span>
+        <h2 class="secao-titulo">Antes de agendar</h2>
+      </div>
+      <div class="faq">
+        <details>
+          <summary>Preciso de pedido médico para fazer fisioterapia?</summary>
+          <p>Não. O fisioterapeuta tem autonomia para avaliar e tratar, então você pode agendar diretamente. Se tiver exames, laudos ou relatório médico, traga na primeira consulta: eles ajudam na avaliação.</p>
+        </details>
+        <details>
+          <summary>O que levar na primeira consulta?</summary>
+          <p>Exames de imagem, laudos, relatórios de cirurgia (se houver) e a lista de medicamentos que você usa. Venha com roupa confortável, que permita avaliar a região da queixa.</p>
+        </details>
+        <details>
+          <summary>Vocês atendem crianças e gestantes?</summary>
+          <p>Sim. A fisioterapia respiratória pediátrica é feita pela Dra. Ana Paula Lopes, e o acompanhamento nutricional de gestantes, bebês e crianças, pela Dra. Derislainy Tinan.</p>
+        </details>
+        <details>
+          <summary>Posso fazer fisioterapia e nutrição ao mesmo tempo?</summary>
+          <p>Pode, e é um dos nossos diferenciais: os profissionais trocam informações sobre o seu caso para que o cuidado seja contínuo entre as especialidades.</p>
+        </details>
       </div>
     </div>
   </section>
 
   <!-- ===== CONTATO ===== -->
-  <section class="secao" id="contato">
+  <section class="secao secao-branca" id="contato">
     <div class="container">
-      <h2 class="secao-titulo">Fale com a gente</h2>
+      <span class="secao-rotulo">Contato</span>
+      <h2 class="secao-titulo">Fale com nossos especialistas</h2>
       <p class="contato-dados">
         Rua 8, Quadra 32, Lote 4, Sala 3 — Itaici 2, Caldas Novas — GO<br>
-        WhatsApp: (64) 99239-9515 · E-mail: tinanfisioterapia@gmail.com<br>
-        Instagram: @tinanfisioterapia · Horário: 08:00 às 20:00
+        WhatsApp: <a href="https://wa.me/5564992399515" target="_blank" rel="noopener">(64) 99239-9515</a> · E-mail: <a href="mailto:tinanfisioterapia@gmail.com">tinanfisioterapia@gmail.com</a><br>
+        Instagram: <a href="https://instagram.com/tinanfisioterapia" target="_blank" rel="noopener">@tinanfisioterapia</a><br>Segunda a sexta, das 8h às 20h · Sábado, das 8h às 12h
       </p>
-      <a href="https://wa.me/5564992399515?text=Ol%C3%A1%2C%20venho%20atrav%C3%A9s%20do%20site%20e%20gostaria%20de%20marcar%20uma%20avalia%C3%A7%C3%A3o" class="btn btn-primario">Agendar pelo WhatsApp</a>
+      <a href="https://wa.me/5564992399515?text=Ol%C3%A1%2C%20venho%20atrav%C3%A9s%20do%20site%20e%20gostaria%20de%20marcar%20uma%20avalia%C3%A7%C3%A3o" class="btn btn-primario" target="_blank" rel="noopener">Agendar pelo WhatsApp</a>
     </div>
   </section>
 
@@ -742,18 +316,19 @@
         </div>
         <div>
           <h4>Navegação</h4>
-          <a href="#sobre">Sobre</a>
-          <a href="#estrutura">Nossa estrutura</a>
+          <a href="#especialidades">Especialidades</a>
           <a href="#profissionais">Profissionais</a>
-          <a href="#localizacao">Onde estamos</a>
-          <a href="#contato">Contato</a>
+          <a href="clinica.html">A clínica</a>
+          <a href="#avaliacoes">Avaliações</a>
+          <a href="#duvidas">Dúvidas frequentes</a>
         </div>
         <div>
           <h4>Contato</h4>
           <a href="tel:+5564992399515">(64) 99239-9515</a>
           <a href="mailto:tinanfisioterapia@gmail.com">tinanfisioterapia@gmail.com</a>
           <a href="https://instagram.com/tinanfisioterapia" target="_blank" rel="noopener">@tinanfisioterapia</a>
-          <p>Segunda a sábado · 08:00 às 20:00</p>
+          <p>Seg. a sex. · 08:00 às 20:00</p>
+          <p>Sábado · 08:00 às 12:00</p>
         </div>
       </div>
       <div class="footer-base">
@@ -762,64 +337,62 @@
     </div>
   </footer>
 
+  <!-- Botão flutuante do WhatsApp -->
+  <a class="whats-flutuante" href="https://wa.me/5564992399515?text=Ol%C3%A1%2C%20venho%20atrav%C3%A9s%20do%20site%20e%20gostaria%20de%20marcar%20uma%20avalia%C3%A7%C3%A3o" target="_blank" rel="noopener" aria-label="Agendar pelo WhatsApp">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.3 7.4L3 21l2.1-5.6A8.5 8.5 0 1 1 21 11.5z"/><path d="M9 9.5c0 3 2.5 5.5 5.5 5.5l1-1.5-2-1-1 .8a4 4 0 0 1-2-2l.8-1-1-2z" fill="currentColor" stroke="none"/></svg>
+  </a>
+
   <script>
     /* ---------- Barra fixa no scroll ---------- */
-    const barraFixa = document.getElementById('barraFixa');
-    const topo = document.querySelector('.topo');
+    (function () {
+      var barra = document.getElementById('barraFixa');
+      var topo = document.querySelector('.topo');
+      window.addEventListener('scroll', function () {
+        barra.classList.toggle('visivel', window.scrollY > topo.offsetHeight - 80);
+      }, { passive: true });
+    })();
 
-    window.addEventListener('scroll', function () {
-      const limite = topo.offsetHeight - 80;
-      if (window.scrollY > limite) {
-        barraFixa.classList.add('visivel');
-      } else {
-        barraFixa.classList.remove('visivel');
-      }
-    }, { passive: true });
-  </script>
-
-  <script>
     /* ---------- Avaliações do Google (via Worker) ---------- */
     (async function () {
-      const lista = document.getElementById('avaliacoes-lista');
+      var lista = document.getElementById('avaliacoes-lista');
       if (!lista) return;
 
+      function seguro(txt) {
+        var d = document.createElement('div');
+        d.textContent = txt == null ? '' : String(txt);
+        return d.innerHTML;
+      }
+
       try {
-        const resposta = await fetch('https://tinan-avaliacoes.tinanfisioterapia.workers.dev');
-        const dados = await resposta.json();
+        var resposta = await fetch('https://tinan-avaliacoes.tinanfisioterapia.workers.dev');
+        var dados = await resposta.json();
 
         if (dados.nota) {
-          document.getElementById('avaliacoes-nota').textContent =
-            dados.nota.toFixed(1).replace('.', ',');
+          var nota = dados.nota.toFixed(1).replace('.', ',');
+          document.getElementById('avaliacoes-nota').textContent = nota;
+          document.getElementById('hero-nota').textContent = nota;
         }
-
         if (dados.total) {
-          document.getElementById('avaliacoes-total').textContent =
-            dados.total + ' avaliações no Google';
+          document.getElementById('avaliacoes-total').textContent = dados.total + ' avaliações no Google';
         }
 
-        const avaliacoes = dados.avaliacoes || [];
-
+        var avaliacoes = (dados.avaliacoes || []).slice(0, 3);
         if (avaliacoes.length === 0) {
-          lista.innerHTML =
-            '<div class="avaliacao-card"><p class="texto">Ainda não há comentários públicos para exibir.</p></div>';
+          lista.innerHTML = '<div class="avaliacao-card"><p class="texto">Ainda não há comentários públicos para exibir.</p></div>';
           return;
         }
 
         lista.innerHTML = avaliacoes.map(function (a) {
-          const nota = Math.max(1, Math.min(5, a.nota || 5));
-          return (
-            '<div class="avaliacao-card">' +
-              '<p class="autor">' + a.autor + '</p>' +
-              '<p class="estrelas">' + '★'.repeat(nota) + '</p>' +
-              '<p class="texto">' + a.texto + '</p>' +
-              (a.quando ? '<p class="quando">' + a.quando + '</p>' : '') +
-            '</div>'
-          );
+          var n = Math.max(1, Math.min(5, a.nota || 5));
+          return '<div class="avaliacao-card">' +
+                   '<p class="autor">' + seguro(a.autor) + '</p>' +
+                   '<p class="estrelas">' + '★'.repeat(n) + '</p>' +
+                   '<p class="texto">' + seguro(a.texto) + '</p>' +
+                   (a.quando ? '<p class="quando">' + seguro(a.quando) + '</p>' : '') +
+                 '</div>';
         }).join('');
-
       } catch (erro) {
-        lista.innerHTML =
-          '<div class="avaliacao-card"><p class="texto">Avaliações indisponíveis no momento.</p></div>';
+        lista.innerHTML = '<div class="avaliacao-card"><p class="texto">Veja o que nossos pacientes dizem diretamente no Google, pelo link abaixo.</p></div>';
       }
     })();
   </script>
